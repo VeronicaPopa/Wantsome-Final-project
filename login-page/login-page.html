@@ -24,7 +24,7 @@
 
 <div id="sign-in-container">
   <img src="./../images/logo.svg" class="logo-img" alt="logo-image">
-  <h1>Sign In Below!</h1>
+  <!-- <h1>Sign In Below!</h1> -->
 
   <form>
 
@@ -41,7 +41,9 @@
         <input type="password" id="password" placeholder="********" >
         <i class="fas fa-eye-slash visibility-toggle"></i>
       </div>
-      <button class="sign-in-btn" type="submit">sign in</button>
+      <p id="error-message-password" class="error-visibility-hidden"> The password must contain at least 11 characters and one number.</p>
+
+      <button class="sign-in-btn" type="submit" disabled >sign in</button>
       <a href="http://www.google.com" class="a-link">Don't have an account? Sign up here!</a>
     </form>
 </div>

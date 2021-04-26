@@ -2,16 +2,21 @@ const emailInput = document.getElementById("email");
 const eyeImage = document.getElementById("eye-image");
 const passwordContainer = document.getElementsByClassName("password-container")[0];
 const signInBtn = document.getElementsByClassName("sign-in-btn")[0];
+const passwordInput = document.getElementById("password");
+let isValidEmail;
+let isValidPass;
 
-emailInput.addEventListener("click", function() {
+
+
+emailInput.addEventListener("click", function () {
   emailInput.classList.add("border-color");
 })
 
-emailInput.addEventListener("blur", function() {
+emailInput.addEventListener("blur", function () {
   emailInput.classList.remove("border-color");
 })
 
-passwordContainer.addEventListener("click", function() {
+passwordContainer.addEventListener("click", function () {
   passwordContainer.classList.add("border-color");
 })
 
@@ -33,33 +38,76 @@ function emailValidator() {
   return false;
 }
 
+
 function addValidationResult() {
-  const validator = emailValidator();
-  if (validator) {
+  isValidEmail = emailValidator();
+  enableSignInBtn();
+
+  if (isValidEmail) {
     const validationMessage = document.getElementById('validation-message');
     validationMessage.classList.remove("visibility-of-message");
-    const form = document.getElementsByTagName("form")[0];
-    const passwordLabel = document.getElementsByTagName("label")[1];
-    form.insertBefore(validationMessage,passwordLabel);
   }
 }
 emailInput.addEventListener("blur", addValidationResult);
 
-const visibilityToggle = document.getElementsByClassName("visibility-toggle")[0];
-  const passwordInput = document.getElementById("password");
- let password = true;
-  visibilityToggle.addEventListener("click", function() {
-    if (password) {
-      passwordInput.setAttribute("type", "text");
-      visibilityToggle.classList.replace("fa-eye-slash", "fa-eye");
-    } else {
-      passwordInput.setAttribute("type", "password");
-      visibilityToggle.classList.replace("fa-eye", "fa-eye-slash");
-    }
-    password = !password;
-  })
 
-signInBtn.addEventListener("click", function(event) {
+const visibilityToggle = document.getElementsByClassName("visibility-toggle")[0];
+let password = true;
+
+visibilityToggle.addEventListener("click", function () {
+  if (password) {
+    passwordInput.setAttribute("type", "text");
+    visibilityToggle.classList.replace("fa-eye-slash", "fa-eye");
+  } else {
+    passwordInput.setAttribute("type", "password");
+    visibilityToggle.classList.replace("fa-eye", "fa-eye-slash");
+  }
+  password = !password;
+})
+
+
+
+function stringValidator() {
+  const passwordValue = passwordInput.value;
+
+  if (passwordValue.length < 8) {
+    return false;
+  }
+  let numbers = "1234567890";
+
+  for (let i = 0; i < passwordValue.length; i++) {
+    if (numbers.includes(passwordValue[i])) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function passwordValidation() {
+  isValidPass = stringValidator();
+  enableSignInBtn();
+
+  const errorVisibility = document.getElementById("error-message-password");
+  
+  if (!isValidPass) {
+    errorVisibility.classList.remove("error-visibility-hidden");
+  } else {
+    errorVisibility.classList.add("error-visibility-hidden");
+  }
+}
+passwordInput.addEventListener("blur", passwordValidation);
+
+
+function enableSignInBtn() {
+  if ((isValidEmail) && (isValidPass)){
+signInBtn.removeAttribute("disabled");
+  } else {
+    signInBtn.setAttribute("disabled", true);
+  }
+}
+
+
+signInBtn.addEventListener("click", function (event) {
   event.preventDefault();
   window.location.href = './../products-page/index.html';
 })
