@@ -1,0 +1,16 @@
+{
+    "folders": [
+		{
+			"path": "../../../Wantome-FE9-s4"
+		},
+		{
+			"path": "../../wantsome/git_homework/Homework"
+		},
+		{
+			"path": ".."
+		}
+	],
+		"settings": {
+			"git.ignoreLimitWarning": true
+		}
+}

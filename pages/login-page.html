@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/login-page.css">
+    <link rel="stylesheet" href="../styles/all.css">
+    <link rel="stylesheet" href="../styles/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&display=swap" rel="stylesheet">
+
+
+
+
+    <title>Login</title>
+  </head>
+
+  <body>
+    <div id="for-seller">
+      <h1>Moonglow Beauty Store</h1>
+      <p>Your go to stop place for hight quality cosmestic products & skin care </p>
+      <button type="submit">for sellers</button>
+    </div>
+    <div id="sign-in-container">
+      <img src="../assets/images/logo.svg" class="logo-img" alt="logo-image">
+      <form>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john.doe@gmail.com">
+        <div id="validation-message" class="visibility-of-message">
+          <i class="fas fa-check-circle"></i>
+          <p>Email address validated!</p>
+        </div>
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input type="password" id="password" placeholder="********">
+          <i class="fas fa-eye-slash visibility-toggle"></i>
+        </div>
+        <p id="error-message-password" class="error-visibility-hidden"> The password must contain at least 11 characters
+          and one number.</p>
+        <button class="sign-in-btn" type="submit" disabled>sign in</button>
+        <a href="http://www.google.com" class="a-link">Don't have an account? Sign up here!</a>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="../scripts/login-page.js"></script>
+  </body>
+
+</html>
