@@ -5,20 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/listing-products-page.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/all.css">
-    <title>BB creams</title>
+    <title>BB cream</title>
   </head>
 
   <body>
     <header>
       <div class="first-container">
-        <img src="../assets/images/logo.svg" alt="logo" width="200px">
+        <a href="../pages/home-page.html"><img src="../assets/images/logo.svg" alt="logo" width="200px"></a>
         <div class="wrap">
-          <div class="search">
+          <div id="search-bar">
             <input type="text" class="searchTerm" placeholder="What products are you looking for?">
             <button type="submit" class="searchButton">
               <i class="fa fa-search"></i>
@@ -30,27 +28,20 @@
             <i class="fas fa-user"></i>
             <a href="../pages/login-page.html" class="authentication">Authentication</a>
           </div>
-          <div class="dropdownCurrLang">
-            <span>RO</span>
-            <i class="fa fa-caret-down"></i>
-            <div class="dropdownCurrLangContent">
-              <ul>
-                <li>EN</li>
-                <li>FR</li>
-              </ul>
-            </div>
+      
+          <div class="dropdownLang">
+            <select name="langSelect" id="langSelect">
+              <option value="ro">RO</option>
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+            </select>
           </div>
-          <div class="dropdownCurrLang">
-            <span>EUR</span>
-            <i class="fa fa-caret-down"></i>
-            <div class="dropdownCurrLangContent">
-              <ul>
-                <li>USD</li>
-                <li>RON</li>
-              </ul>
-            </div>
-
-
+          <div class="dropdownCurrency">
+            <select name="currencySelect" id="currencySelect">
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="RON">RON</option>
+            </select>
           </div>
         </div>
       </div>
@@ -204,85 +195,44 @@
       </div>
     </header>
     <main>
-      <div class="filter-by-brand-container">
-        <p><i>Brand</i></p>
-        <form action="" id="brand">
-          <!-- <input type="checkbox" id="brand1" name="brand" value="Mizon">
-          <label for="brand1">Mizon</label> <br>
-          <input type="checkbox" id="brand2" name="brand" value="Purito">
-          <label for="brand1">Purito</label> <br>
-          <input type="checkbox" id="brand3" name="brand" value="Dr.Ceuracle">
-          <label for="brand1">Dr.Ceuracle</label> <br>
-          <input type="checkbox" id="brand4" name="brand" value="Dr.G">
-          <label for="brand1">Dr.G</label> <br>
-          <input type="checkbox" id="brand5" name="brand" value="Dr.Jart+">
-          <label for="brand1">Dr.Jart+</label> <br>
-          <input type="checkbox" id="brand6" name="brand" value="Holika Holika">
-          <label for="brand1">Holika Holika</label> <br>
-          <input type="checkbox" id="brand7" name="brand" value="Lapalette">
-          <label for="brand1">Lapalette</label> <br>
-          <input type="checkbox" id="brand8" name="brand" value="Missha">
-          <label for="brand1">Missha</label> <br> -->
-        </form>
-      </div>
-      <div class="filter-by-product-name-container">
-        <p><i>Product Name</i></p>
-        <form action="" id="name">
-          <!-- <input type="checkbox" id="name1" name="productName" value="Recovery BB Balm">
-          <label for="name1">Recovery BB Balm</label> <br>
-          <input type="checkbox" id="name2" name="productName" value="Glow Fit Cushion">
-          <label for="name2">Glow Fit Cushion</label> <br>
-          <input type="checkbox" id="name3" name="productName" value="Radiance Dual Essence BB">
-          <label for="name3">Radiance Dual Essence BB</label> <br>
-          <input type="checkbox" id="name4" name="productName" value="Premium ВВ Beauty Balm">
-          <label for="name4">Premium ВВ Beauty Balm</label> <br>
-          <input type="checkbox" id="name5" name="productName" value="Shimmering Petit BB Cream">
-          <label for="name5">Shimmering Petit BB Cream</label> <br>
-          <input type="checkbox" id="name6" name="productName" value="Bouncing Petit BB Cream">
-          <label for="name6">Bouncing Petit BB Cream</label> <br>
-          <input type="checkbox" id="name7" name="productName" value="Silky Tension Cover Pact Original White Horse">
-          <label for="name7">Silky Tension Cover Pact Original White Horse</label> <br>
-          <input type="checkbox" id="name8" name="productName" value="Signature Real Complete BB Cream">
-          <label for="name8">Signature Real Complete BB Cream</label> <br>
-          <input type="checkbox" id="name9" name="productName" value="Perfect Cover BB Cream">
-          <label for="name1">Perfect Cover BB Cream</label> <br>
-          <input type="checkbox" id="name10" name="productName" value="Cho Bo Yang BB Cream">
-          <label for="name1">Cho Bo Yang BB Cream</label> <br>
-          <input type="checkbox" id="name11" name="naproductNameme" value="Signature Wrinkle Fill-Up BB Cream">
-          <label for="name1">Signature Wrinkle Fill-Up BB Cream</label> <br>
-          <input type="checkbox" id="name12" name="productName" value="Signature Real Complete BB Cream">
-          <label for="name1">Signature Real Complete BB Cream</label> <br>
-          <input type="checkbox" id="name13" name="productName" value="Snail Repair Intensive BB Cream">
-          <label for="name1">Snail Repair Intensive BB Cream</label> <br>
-          <input type="checkbox" id="name14" name="productName" value="Cho Bo Yang BB Cream">
-          <label for="name1">Cho Bo Yang BB Cream</label> <br>
-          <input type="checkbox" id="name15" name="productName" value="Watermax Moisture BB Cream">
-          <label for="name1">Watermax Moisture BB Cream</label> <br>
-          <input type="checkbox" id="name16" name="productName" value="Snail Repair Intensive BB Cream">
-          <label for="name5">Snail Repair Intensive BB Cream</label> <br>
-          <input type="checkbox" id="name17" name="productName" value="Cica Clearing BB cream">
-          <label for="name5">Cica Clearing BB cream</label> <br> -->
-        </form>
-      </div>
-      <!-- --------------------------------- -->
-      <div class="products-catalog">
-        <!-- <div class="product-container">
-          <div class="img-container">
-            <img src="../assets/images/aromatica_3.jpg" alt="aromatica_lavender_relazing">
-          </div>
-          <div class="main-info-container">
-            <p class="name"> Aromatica Lavender Relaxing Massage&Body Oil 100 ml</p>
-            <div class="price-container">
-              <p class="price">201MDL</p>
-              <div class="wish-list-btn">
-                <i class="fas fa-shopping-bag"></i>
-              </div>
-            </div>
-          </div>
+      <div class="filter">
+        <div class="filter-by-brand-container">
+          <p><i><strong>Brand</strong></i></p>
+          <form action="" id="brand">
+          </form>
         </div>
-        </div> -->
+        <div class="filter-by-product-name-container">
+          <p><i><strong>Product Name</strong></i></p>
+          <form action="" id="name">
+          </form>
+        </div>
+      </div>
+      <div class="main-container">
+        <div class="products-catalog-manipulate">
+          <div class="sort">
+            <label>Sort by:</label>
+            <select id="sort" data-filter="false">
+              <option value="null">Featured</option>
+              <option value="lowest-price">Lowest price</option>
+              <option value="highest-price">Highest price</option>
+              <option value="name-a-z">Brand name (A-Z)</option>
+              <option value="name-z-a">Brand name (Z-A)</option>
+            </select>
+          </div>
+          <div class="show-on-page">
+            <label for="per-page">Results per page:</label>
+            <select name="per-page" id="per-page">
+              <option value="12">12</option>
+              <option value="24">24</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="products-catalog">
+        </div>
 
       </div>
+
     </main>
     <footer class="footer">
       <div class="footer-container">

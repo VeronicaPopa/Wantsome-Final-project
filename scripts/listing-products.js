@@ -7,7 +7,6 @@ menuBar.addEventListener("click", menuList);
 
 const navbar = document.getElementsByClassName("navbar")[0];
 const sticky = navbar.offsetTop;
-
 function createStickyNav() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
@@ -17,180 +16,186 @@ function createStickyNav() {
 }
 window.onscroll = function () { createStickyNav() };
 
+const currencyRates = {
+  EUR: { value: 1, symbol: "€" },
+  USD: { value: 1.22, symbol: "$" },
+  RON: { value: 4.93, symbol: "RON" }
+}
+let selectedRate = "EUR";
+
 let products = [
   {
     image: "../assets/images/bb-creams/dr._ceuracle_38.jpg",
     brand: "Dr.Ceuracle",
     productName: "Recovery BB Balm",
     details: "SPF 28 PA ++ 45 ml",
-    price: "25.48"
+    price: 25.48
   },
   {
     image: "../assets/images/bb-creams/dr._ceuracle_p_46.jpg",
     brand: "Dr.Ceuracle",
     productName: "Glow Fit Cushion",
     details: "SPF50+ PA+++ 01 Pale Beige 13 g",
-    price: "20.82"
+    price: 20.82
   },
   {
     image: "../assets/images/bb-creams/dr._ceuracle_p_47.jpg",
     brand: "Dr.Ceuracle",
     productName: "Glow Fit Cushion",
     details: "SPF50+ PA+++ 02 Natural Beige 13 g",
-    price: "20.82"
+    price: 20.82
   },
   {
     image: "../assets/images/bb-creams/dr._g_18.jpg",
     brand: "Dr.G",
     productName: "Radiance Dual Essence BB",
     details: "SPF50+ PA+++ 40g",
-    price: "18.62"
+    price: 18.62
   },
   {
     image: "../assets/images/bb-creams/dr._jart.jpg",
     brand: "Dr.Jart+",
     productName: "Premium ВВ Beauty Balm",
     details: "SPF-45 Pa+++ 40 ml",
-    price: "41.65"
+    price: 41.65
   },
   {
     image: "../assets/images/bb-creams/holika_holika_4.jpg",
     brand: "Holika Holika",
     productName: "Shimmering Petit BB Cream",
-    details: "30ml",
-    price: "6.12"
+    details: "30 ml",
+    price: 6.12
   },
   {
     image: "../assets/images/bb-creams/holika_holika_5jpg.jpeg",
     brand: "Holika Holika",
     productName: "Bouncing Petit BB Cream",
     details: "30 ml",
-    price: "6.12"
+    price: 6.12
   },
   {
     image: "../assets/images/bb-creams/lapalette_17.jpg",
     brand: "Lapalette",
     productName: "Silky Tension Cover Pact Original White Horse",
     details: "SPF50+PA+++ №21, 12g* 2",
-    price: "17.59"
+    price: 17.59
   },
   {
     image: "../assets/images/bb-creams/lapalette_161.jpg",
     brand: "Lapalette",
     productName: "Silky Tension Cover Pact Original White Horse",
     details: "SPF50+PA+++ №23, 12g* 2",
-    price: "17.59"
+    price: 17.59
   },
   {
     image: "../assets/images/bb-creams/missha_9.jpg",
     brand: "Missha",
     productName: "Signature Real Complete BB Cream",
     details: "SPF 25 PA+++ № 21 (Light Pink Beige) 45gr",
-    price: "23.52"
+    price: 23.52
   },
   {
     image: "../assets/images/bb-creams/missha_10.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
     details: "SPF 42 PA+++ № 25 20 ml",
-    price: "8.82"
+    price: 8.82
   },
   {
     image: "../assets/images/bb-creams/missha_11.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
     details: "SPF 42 PA+++ № 29 50 ml",
-    price: "14.94"
+    price: 14.94
   },
   {
     image: "../assets/images/bb-creams/missha_12.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
     details: "SPF 42 PA+++ № 29 50 ml",
-    price: "14.94"
+    price: 14.94
   },
   {
     image: "../assets/images/bb-creams/missha_11.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
     details: "SPF 42 PA+++ № 25 50 ml",
-    price: "14.94"
+    price: 14.94
   },
   {
     image: "../assets/images/bb-creams/missha_15.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
     details: "SPF 42 PA+++ № 21 (Light Beige) 50 ml",
-    price: "14.94"
+    price: 14.94
   },
   {
     image: "../assets/images/bb-creams/missha_38.jpg",
     brand: "Missha",
     productName: "Cho Bo Yang BB Cream",
     details: "Spf30/pa++ № 21 50 ml",
-    price: "27.93"
+    price: 27.93
   },
   {
     image: "../assets/images/bb-creams/missha_39.jpg",
     brand: "Missha",
     productName: "Signature Wrinkle Fill-Up BB Cream",
     details: "SPF37 PA++ № 21 44 ml",
-    price: "27.68"
+    price: 27.68
   },
   {
     image: "../assets/images/bb-creams/missha_91.jpg",
     brand: "Missha",
     productName: "Signature Real Complete BB Cream",
     details: " SPF25/PA++ 45g N23",
-    price: "23.52"
+    price: 23.52
   },
   {
     image: "../assets/images/bb-creams/mizon_5.jpg",
     brand: "Mizon",
     productName: "Snail Repair Intensive BB Cream",
     details: "SPF50+ РА+++ №31 50ml",
-    price: "9.06"
+    price: 9.06
   },
   {
     image: "../assets/images/bb-creams/missha_382jpg.jpeg",
     brand: "Missha",
     productName: "Cho Bo Yang BB Cream",
     details: "Spf30/pa++ № 21 50 ml",
-    price: "27.93"
+    price: 27.93
   },
   {
     image: "../assets/images/bb-creams/mizon_28.jpg",
     brand: "Mizon",
     productName: "Watermax Moisture BB Cream",
     details: "SPF 30 PA+++ 50 ml",
-    price: "11.27"
+    price: 11.27
   },
   {
     image: "../assets/images/bb-creams/mizon_47.jpg",
     brand: "Mizon",
     productName: "Snail Repair Intensive BB Cream",
     details: "SPF50+ РА+++ №21, 20ml",
-    price: "5.39"
+    price: 5.39
   },
   {
     image: "../assets/images/bb-creams/mizon_48.jpg",
     brand: "Mizon",
     productName: "Snail Repair Intensive BB Cream",
     details: "SPF50+ РА+++ №23, 20ml",
-    price: "5.39"
+    price: 5.39
   },
   {
     image: "../assets/images/bb-creams/purito_1.jpg",
     brand: "Purito",
     productName: "Cica Clearing BB cream",
     details: "№23 30ml",
-    price: "12.98"
+    price: 12.98
   }
 ];
 
-
-
 function displayProducts(listOfProducts) {
+  productResult = listOfProducts;
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
 
@@ -220,7 +225,8 @@ function displayProducts(listOfProducts) {
     mainInfoContainer.appendChild(priceContainer);
     const productPrice = document.createElement("p");
     productPrice.classList.add("price");
-    productPrice.textContent = product.price + " " + "€";
+    const rateInfo = currencyRates[selectedRate];
+    productPrice.textContent = (product.price * rateInfo.value).toFixed(2) + " " + rateInfo.symbol;
     priceContainer.appendChild(productPrice);
 
     const wishListBtn = document.createElement("div");
@@ -233,18 +239,6 @@ function displayProducts(listOfProducts) {
     wishListBtn.appendChild(wishListIcon);
   }
 }
-
-// function generateFilterByBrand(products) {
-//   const filterBrandForm = document.getElementsByClassName("filter-by-brand");
-//   idCount = 1;
-//   let idGenerator = "name" + idCount;
-//   for (let product of products) {
-//     idCount = idCount++;
-//     const input = document.createElement("input");
-//     filterBrandForm.appendChild(input);
-//   }
-// }
-// generateFilterByBrand(products);
 
 function generateFilter(selectId, objectKey) {
   const values = new Set(products.map((product) => product[objectKey]));
@@ -261,25 +255,21 @@ function generateFilter(selectId, objectKey) {
     input.setAttribute("value", value);
     input.setAttribute("name", objectKey);
     label.setAttribute("for", "name" + id);
-    label.innerHTML = " " + value;
+    label.innerHTML = value;
     filterForm.appendChild(input);
     filterForm.appendChild(label);
     filterForm.appendChild(breakLine);
-    console.log(input);
   }
 }
 
 generateFilter("brand", "brand");
 generateFilter("name", "productName");
 
-
-
-
-
 const filterOptions = document.querySelectorAll("[type = checkbox]");
 let filterBrandCriterias = [];
 let filterProductNameCriterias = [];
-displayProducts(products);
+let productResult = [];
+displayProducts(products.slice(0, 12));
 registerChangeEvent();
 
 function registerChangeEvent() {
@@ -330,4 +320,105 @@ function filterByProperty(filterPropName, filterValue, partialProducts) {
 
   return filteredProducts;
 }
+
+const sortSelect = document.getElementById("sort");
+
+function sortBy(field, direction) {
+  productResult.sort(function (a, b) {
+    let value1 = a[field];
+    let value2 = b[field];
+
+    if (typeof value1 === "string") value1 = value1.toUpperCase();
+    if (typeof value2 === "string") value2 = value2.toUpperCase();
+
+    if (
+      (direction === "asc" && value1 < value2) ||
+      (direction === "desc" && value1 > value2)
+    ) {
+      return -1;
+    }
+
+    if (
+      (direction === "asc" && value1 > value2) ||
+      (direction === "desc" && value1 < value2)
+    ) {
+      return 1;
+    }
+
+    return 0;
+  });
+  displayProducts(productResult);
+}
+
+sortSelect.addEventListener("change", (event) => {
+  onSortChange(event);
+});
+
+function onSortChange(event) {
+  const { value } = event.target;
+  switch (value) {
+    case "name-a-z": {
+      sortBy("brand", "asc");
+      break;
+    }
+    case "name-z-a": {
+      sortBy("brand", "desc");
+      break;
+    }
+    case "lowest-price": {
+      sortBy("price", "asc");
+      break;
+    }
+    case "highest-price": {
+      sortBy("price", "desc");
+      break;
+    }
+  }
+}
+
+const searchBar = document.getElementById("search-bar");
+
+searchBar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+  const filteredCharacters = products.filter((product) => {
+    return (
+      product.brand.toLowerCase().includes(searchString) ||
+      product.productName.toLowerCase().includes(searchString)) ||
+      product.details.toLowerCase().includes(searchString);
+
+  })
+  displayProducts(filteredCharacters);
+})
+
+const perPageSelect = document.getElementById("per-page");
+perPageSelect.addEventListener("change", (event) => {
+  perPageShow(event);
+});
+
+function perPageShow(event) {
+  const { value } = event.target;
+
+  switch (value) {
+    case "12": {
+      // console.log(productResult.slice(0, 8));
+      displayProducts(products.slice(0, 12));
+      break;
+    }
+    case "24": {
+      displayProducts(products.slice(0, 24));
+      break;
+    }
+  }
+}
+
+
+// ----------------schimbare valuta
+const currencySelect = document.getElementById("currencySelect");
+
+currencySelect.addEventListener("change", (event) => {
+  selectedRate = event.target.value;
+  displayProducts(productResult);
+});
+
+
 

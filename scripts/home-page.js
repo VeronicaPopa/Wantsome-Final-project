@@ -1,3 +1,4 @@
+
 const menuBar = document.getElementsByClassName("menu")[0];
 function menuList() {
   const ul = document.getElementsByTagName("ul")[0];
@@ -18,89 +19,115 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
-window.onscroll = function() {myFunction()};
+window.onscroll = function () { myFunction() };
 
+const currencyRates = {
+  EUR: { value: 1, symbol: "€" },
+  USD: { value: 1.22, symbol: "$" },
+  RON: { value: 4.93, symbol: "RON" }
+}
+let selectedRate = "EUR";
+const currencySelect = document.getElementById("currencySelect");
+
+currencySelect.addEventListener("change", (event) => {
+  selectedRate = event.target.value;
+  displayProducts(products);
+});
 
 
 
 let products = [
   {
-    image : "../assets/images/aromatica_3.jpg",
-    brand : "Aromatica",
-    description : "Lavender Relaxing Massage&Body Oil 100 ml",
-    price : "201"
+    image: "../assets/images/aromatica_3.jpg",
+    brand: "Aromatica",
+    productName: "Lavender Relaxing Massage&Body Oil",
+    details: "100 ml",
+    price: "9.83"
   },
   {
-    image : "../assets/images/dr._ceuracle.jpg",
-    brand : "Dr.Ceuracle",
-    description : "PRO Balance Morning ENZYME Wash 50 g",
-    price : "223"
+    image: "../assets/images/dr._ceuracle.jpg",
+    brand: "Dr.Ceuracle",
+    productName: "PRO Balance Morning ENZYME Wash",
+    details: "50 g",
+    price: "10.90"
   },
   {
-    image : "../assets/images/by_wishtrend_1.jpg",
-    brand : "BY WISHTREND",
-    description : "Acid-Duo Hibiscus 63 Cream 50ml",
-    price : "16,75"
+    image: "../assets/images/by_wishtrend_1.jpg",
+    brand: "BY WISHTREND",
+    productName: "Acid-Duo Hibiscus 63 Cream",
+    details: "50 ml",
+    price: "16.75"
   },
   {
-    image : "../assets/images/by_wishtrend_2.jpg",
-    brand : "By Wishtrend",
-    description : "Teca 1% Barrier Cream",
-    price : "20.69"
+    image: "../assets/images/by_wishtrend_2.jpg",
+    brand: "By Wishtrend",
+    productName: "Teca 1% Barrier Cream",
+    details: "",
+    price: "20.69"
   },
   {
-    image : "../assets/images/j_msolution.jpg",
-    brand : "JMsolution",
-    description : "Glow Luminous Flower Firming Eye Mask",
-    price : "1.72"
+    image: "../assets/images/j_msolution.jpg",
+    brand: "JMsolution",
+    productName: "Glow Luminous Flower Firming Eye Mask",
+    details: "",
+    price: "1.72"
   },
   {
-    image : "../assets/images/manyo_factory_26.jpg",
-    brand : "Manyo Factory",
-    description : "Herb Green Cleansing Oil 200 ml",
-    price : "24.59"
+    image: "../assets/images/manyo_factory_26.jpg",
+    brand: "Manyo Factory",
+    productName: "Herb Green Cleansing Oil",
+    details: "200 ml",
+    price: "24.59"
   },
   {
-    image : "../assets/images/manyo_factory_29.jpg",
-    brand : "Manyo Factory",
-    description : "Cleansing Soda Foam 150 ml",
-    price : "13.45"
+    image: "../assets/images/manyo_factory_29.jpg",
+    brand: "Manyo Factory",
+    productName: "Cleansing Soda Foam",
+    details: "150 ml",
+    price: "13.45"
   },
   {
-    image : "../assets/images/petitfee&_koelf_23.jpg",
-    brand : "Petitfée",
-    description : "Hydrogel Angel Wings Gold Neck Pack",
-    price : "1.13"
+    image: "../assets/images/petitfee&_koelf_23.jpg",
+    brand: "Petitfée",
+    productName: "Hydrogel Angel Wings Gold Neck Pack",
+    details: "",
+    price: "1.13"
   },
   {
-    image : "../assets/images/pyunkang_yul.jpg",
-    brand : "Pyunkang Yul",
-    description : "Moisture Ampoule 100ml",
-    price : "23.90"
+    image: "../assets/images/pyunkang_yul.jpg",
+    brand: "Pyunkang Yul",
+    productName: "Moisture Ampoule",
+    details: "100 ml",
+    price: "23.90"
   },
   {
-    image : "../assets/images/so_natural_15.jpg",
-    brand : "So Natural",
-    description : "Real Matte Make Up Setting Fixx 75ml",
-    price : "13.40"
+    image: "../assets/images/so_natural_15.jpg",
+    brand: "So Natural",
+    productName: "Real Matte Make Up Setting Fixx",
+    details: "75 ml",
+    price: "13.40"
   },
   {
-    image : "../assets/images/the_oozoo_2.png",
-    brand : "The Oozoo",
-    description : "Face In-Shot Mask Nutrient 2.8 ml",
-    price : "5.47"
+    image: "../assets/images/the_oozoo_2.png",
+    brand: "The Oozoo",
+    productName: "Face In-Shot Mask Nutrient",
+    details: "2.8 ml",
+    price: "5.47"
   },
   {
-    image : "../assets/images/village11_factory_9.jpg",
-    brand : "Village 11 Factory",
-    description : "Blue Chamomile Cream 300ml",
-    price : "11.58"
+    image: "../assets/images/village11_factory_9.jpg",
+    brand: "Village 11 Factory",
+    productName: "Blue Chamomile Cream",
+    details: "300 ml",
+    price: "11.58"
   }
 ]
-  
-function addProductContainer() {
-  for (let product of products) {
-    const productsCatalog = document.getElementsByClassName("products-catalog")[0];
+
+function displayProducts(listOfProducts) {
+  const productsCatalog = document.getElementsByClassName("products-catalog")[0];
+  productsCatalog.innerHTML = " ";
+
+  for (let product of listOfProducts) {
     let productContainer = document.createElement("div");
     productContainer.classList.add("product-container");
     productsCatalog.appendChild(productContainer);
@@ -118,36 +145,55 @@ function addProductContainer() {
     productContainer.appendChild(mainInfoContainer);
     const productName = document.createElement("p");
     productName.classList.add("name");
-    productName.textContent = product.brand + " "+ product.description;
+    productName.textContent = product.brand + " " + product.productName + " " + product.details;
     mainInfoContainer.appendChild(productName);
-    
+
     const priceContainer = document.createElement("div");
     priceContainer.classList.add("price-container");
     mainInfoContainer.appendChild(priceContainer);
     const productPrice = document.createElement("p");
     productPrice.classList.add("price");
-    productPrice.textContent = product.price + " " + "€";
+    const rateInfo = currencyRates[selectedRate];
+    productPrice.textContent = (product.price * rateInfo.value).toFixed(2) + " " + rateInfo.symbol;
     priceContainer.appendChild(productPrice);
-    
+
     const wishListBtn = document.createElement("div");
     wishListBtn.classList.add("wish-list-btn");
     priceContainer.appendChild(wishListBtn);
-    
+
     const wishListIcon = document.createElement("i");
     wishListIcon.classList.add("fas");
     wishListIcon.classList.add("fa-shopping-bag");
-    wishListBtn.appendChild(wishListIcon);    
+    wishListBtn.appendChild(wishListIcon);
   }
 }
-addProductContainer();
+
+displayProducts(products);
+
+
+// Search Bar function
+
+const searchBar = document.getElementById("search-bar");
+
+searchBar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+  const filteredCharacters = products.filter((product) => {
+    return (
+      product.brand.toLowerCase().includes(searchString) ||
+      product.productName.toLowerCase().includes(searchString)) ||
+      product.details.toLowerCase().includes(searchString);
+    ;
+  })
+  displayProducts(filteredCharacters);
+})
 
 
 
-var counter = 1;
-    setInterval(function(){
-      document.getElementById('radio' + counter).checked = true;
-      counter++;
-      if(counter > 4){
-        counter = 1;
-      }
-    }, 5000);
+let counter = 1;
+setInterval(function () {
+  document.getElementById('radio' + counter).checked = true;
+  counter++;
+  if (counter > 4) {
+    counter = 1;
+  }
+}, 5000);

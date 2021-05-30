@@ -1,11 +1,6 @@
-// $primary-color: rgb(239, 246, 246);
-// $details-color: rgb(255, 181, 198);
-// $header-footer-color: white;
-// $text-color: black;
-// $hover-color: rgb(125, 210, 211);
-
-@import 'product-container-styles.scss';
-@import 'colors.scss';
+@import "product-container-styles.scss";
+@import "colors.scss";
+@import "navbar.scss";
 
 * {
     box-sizing: border-box;
@@ -14,81 +9,82 @@
 }
 html {
     // max-height: 1000000px;
-    height: 100%;
+    // height: 100%;
+    min-width: 320px;
 }
 body {
     background-color: $primary-color;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     margin: 0 auto;
     height: 100%;
-    // main {
-//        .products-catalog {
-//         position: relative;
-//         display: flex;
-//         flex-wrap: wrap;
-//         .product-container {
-//             width: calc(25% - 2px);
-//             background-color: white;
-//             padding: 30px;
-//             margin: 1px;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             align-items: center;
-//             border: 1px solid $primary-color;
-//             cursor: pointer;
-//             .img-container {
-//                 position: relative;
-//                 width: 100%;
-//                 height: 300px;
-//                 display: flex;
-//                 justify-content: center;
-//                 align-items: center;
-//                 img {
-//                     position: relative;
-//                     width: 100%;
-//                     height: 300px;
-//                 }
-//             }
-//             .main-info-container {
-//                 display: flex;
-//                 flex-direction: column;
-//                 line-height: 24px;
-//                 .name {
-//                     margin-top: 30px;
-//                     letter-spacing: .32px;
-//                     font-weight: 200;
-//                     &:hover {
-//                         color: $hover-color;
-//                     }
-//                 }
-             
-//                 .price-container {
-//                     display: flex;
-//                     align-items: center;
-//                     .price {
-//                         display: flex;
-//                         align-items: baseline;
-//                         width: 100%;
-//                         padding: 20px 0;
-//                         font-size: 19px;
-//                         color: black;
-//                     }
-//                     .wish-list-btn {
-//                         color: $details-color;
-//                         font-size: 24px;
-//                         &:hover {
-//                             color: $hover-color;
-//                         }
-//                     }
-//                 } 
-//             } 
-//         }
-//        }
-    
-// }
-// .product-container:hover {
-//         box-shadow: 0px 0px 10px 1px $hover-color;
-//         color: $hover-color;
-// }
+
+    main {
+        width: 100%;
+        display: flex;
+
+        .filter {
+            width: 25%;
+
+            .filter-by-brand-container {
+                line-height: 1.5;
+                padding: 30px;
+                height: 300px;
+                background-color: white;
+                margin: 30px;
+
+                p {
+                    margin-bottom: 10px;
+                }
+            }
+            .filter-by-product-name-container {
+                line-height: 1.5;
+                padding: 30px;
+                height: 300px;
+                background-color: white;
+                margin: 30px;
+                overflow: scroll;
+
+                p {
+                    margin-bottom: 10px;
+                }
+            }
+            form {
+                label {
+                    margin: 5px;
+                }
+            }
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+
+            .products-catalog-manipulate {
+                height: 10vh;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                label {
+                    margin-right: 10px;
+                }
+
+                select {
+                    width: 135px;
+                    outline: none;
+                    border: none;
+                    height: 30px;
+                    padding-left: 5px;
+                }
+            }
+
+            .products-catalog {
+                .product-container {
+                    width: calc(33.33% - 2px);
+                    height: 506px;
+                }
+            }
+        }
+    }
 }

@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/home-style.css">
-    <!-- <link rel="stylesheet" href="../styles/navbar.css"> -->
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/all.css">
@@ -18,7 +16,7 @@
       <div class="first-container">
         <img src="../assets/images/logo.svg" alt="logo" width="200px">
         <div class="wrap">
-          <div class="search">
+          <div id="search-bar">
             <input type="text" class="searchTerm" placeholder="What products are you looking for?">
             <button type="submit" class="searchButton">
               <i class="fa fa-search"></i>
@@ -30,29 +28,22 @@
             <i class="fas fa-user"></i>
             <a href="../pages/login-page.html" class="authentication">Authentication</a>
           </div>
-          <div class="dropdownCurrLang">
-            <span>RO</span>
-            <i class="fa fa-caret-down"></i>
-            <div class="dropdownCurrLangContent">
-              <ul>
-                <li>EN</li>
-                <li>FR</li>
-              </ul>
-            </div>
+          <div class="dropdownLang">
+            <select name="langSelect" id="langSelect">
+              <option value="ro">RO</option>
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+            </select>
           </div>
-          <div class="dropdownCurrLang">
-            <span>EUR</span>
-            <i class="fa fa-caret-down"></i>
-            <div class="dropdownCurrLangContent">
-              <ul>
-                <li>USD</li>
-                <li>RON</li>
-              </ul>
-            </div>
-
-
-          </div>
+          <!-- <div class="dropdownCurrency"> -->
+            <select name="currencySelect" id="currencySelect">
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="RON">RON</option>
+            </select>
+          <!-- </div> -->
         </div>
+      </div>
       </div>
       <div class="navbar">
         <!-- <nav> -->
@@ -69,7 +60,7 @@
               </a>
               <div class="dropdown-content">
                 <ul>
-                  <li><a href="#bbCream">BB cream</a></li>
+                  <li><a href="../pages/listing-products-page.html">BB cream</a></li>
                   <li><a href="#ccCream">CC cream</a></li>
                   <li><a href="#primers">Primers</a></li>
                   <li><a href="#">Foundations</a></li>
@@ -204,10 +195,6 @@
       </div>
     </header>
     <main>
-
-
-
-
       <div class="slider">
         <div class="slides">
 
@@ -247,21 +234,6 @@
 
       <!-- --------------------------------- -->
       <div class="products-catalog">
-        <!-- <div class="product-container">
-          <div class="img-container">
-            <img src="../assets/images/aromatica_3.jpg" alt="aromatica_lavender_relazing">
-          </div>
-          <div class="main-info-container">
-            <p class="name"> Aromatica Lavender Relaxing Massage&Body Oil 100 ml</p>
-            <div class="price-container">
-              <p class="price">201MDL</p>
-              <div class="wish-list-btn">
-                <i class="fas fa-shopping-bag"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div> -->
 
       </div>
     </main>

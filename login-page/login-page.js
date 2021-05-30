@@ -6,8 +6,6 @@ const passwordInput = document.getElementById("password");
 let isValidEmail;
 let isValidPass;
 
-
-
 emailInput.addEventListener("click", function () {
   emailInput.classList.add("border-color");
 })
@@ -19,7 +17,6 @@ emailInput.addEventListener("blur", function () {
 passwordContainer.addEventListener("click", function () {
   passwordContainer.classList.add("border-color");
 })
-
 
 
 function emailValidator() {
@@ -41,14 +38,18 @@ function emailValidator() {
 
 function addValidationResult() {
   isValidEmail = emailValidator();
-  enableSignInBtn();
+  updateSubmitStatus();
+  const validationMessage = document.getElementById('validation-message');
 
   if (isValidEmail) {
-    const validationMessage = document.getElementById('validation-message');
     validationMessage.classList.remove("visibility-of-message");
+  } else {
+    validationMessage.classList.add("visibility-of-message");
+
   }
 }
-emailInput.addEventListener("blur", addValidationResult);
+
+emailInput.addEventListener("keyup", addValidationResult);
 
 
 const visibilityToggle = document.getElementsByClassName("visibility-toggle")[0];
@@ -85,22 +86,22 @@ function stringValidator() {
 
 function passwordValidation() {
   isValidPass = stringValidator();
-  enableSignInBtn();
+  updateSubmitStatus();
 
   const errorVisibility = document.getElementById("error-message-password");
-  
+
   if (!isValidPass) {
     errorVisibility.classList.remove("error-visibility-hidden");
   } else {
     errorVisibility.classList.add("error-visibility-hidden");
   }
 }
-passwordInput.addEventListener("blur", passwordValidation);
+passwordInput.addEventListener("keyup", passwordValidation);
 
 
-function enableSignInBtn() {
-  if ((isValidEmail) && (isValidPass)){
-signInBtn.removeAttribute("disabled");
+function updateSubmitStatus() {
+  if ((isValidEmail) && (isValidPass)) {
+    signInBtn.removeAttribute("disabled");
   } else {
     signInBtn.setAttribute("disabled", true);
   }
