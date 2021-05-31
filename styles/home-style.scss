@@ -31,12 +31,33 @@ body {
         height: 500px;
         border-radius: 10px;
         overflow: hidden;
+
+        @media screen and (max-width: 768px) {
+            height: 350px;
+        }
+        @media screen and (max-width: 568px) {
+            height: 200px;
+        }
+        @media screen and (max-width: 375px) {
+            height: 180px;
+        }
     }
 
     .slides {
         width: 500%;
         height: 500px;
         display: flex;
+
+        @media screen and (max-width: 768px) {
+            height: 350px;
+        }
+        @media screen and (max-width: 568px) {
+            height: 200px;
+        }
+        @media screen and (max-width: 375px) {
+            height: 180px;
+        }
+
     }
 
     .slides input {
@@ -55,17 +76,27 @@ body {
         z-index: 2;
         letter-spacing: 10px;
         opacity: 0.7;
+
+       
+
     }
     .sales {
         top: 30%;
         left: 20%;
         font-size: 55px;
+        @media screen and (max-width: 768px) {
+            font-size: 20px;
+        }
     }
 
     .shipping {
         top: 30%;
         left: 20%;
         font-size: 75px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 22px;
+        }
     }
 
     .slide img {
@@ -76,6 +107,18 @@ body {
         top: 0;
         bottom: 0;
         margin: auto auto;
+
+        height: 100%;
+        object-fit: cover;
+   
+        // top: 50%;
+        // left: 50%;
+        // @media screen and (max-width: 992px) {
+        //     height: 100%;
+        //     min-width: 100%;
+
+        // }
+        
     }
 
     .navigation-manual {
