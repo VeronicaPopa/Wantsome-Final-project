@@ -195,7 +195,8 @@
     </header>
     <main>
       <div class="main-product-details">
-        <div class="left-product-info-container">
+        <!-- <div class="left-product-info-container"> -->
+        <div class="top-product-details">
           <div class="slider-container">
             <img class="my-slides" src="../assets/images/product-images/missha_39-_-1620203584.jpg">
             <img class="my-slides" src="../assets/images/product-images/135._p_n_g-_-1619613485.png">
@@ -206,6 +207,55 @@
             <button class="control-next" onclick="plusDivs(-1)">&#10095;</button>
             <button class="control-prev" onclick="plusDivs(1)">&#10094;</button>
           </div>
+          <div class="details-to-buy-container">
+            <span class="send-to-favorites">
+              <i class="far fa-heart"></i>
+            </span>
+            <p class="product-name">Missha Signature Wrinkle Fill-Up BB Cream <br> SPF37 PA++ № 21 44 ml</p>
+            <div class="price-container">
+              <span class="price">27.68 €</span>
+            </div>
+            <div class="counter-products-block">
+              <div class="counter">
+                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                <input class="quantity" type="text" value="1">
+                <span class="up" onClick='increaseCount(event, this)'>+</span>
+              </div>
+              <button class="add-to-bag">Add to shopping bag
+                <i class="fas fa-cart-arrow-down"></i>
+              </button>
+            </div>
+            <p class="delivery-details">
+              Delivery within 1-2 days.<br>
+              Free delivery with an order amount of 20 € and higher. <br>
+              If the order is made on the weekend or after 5:00 pm, the order is processed on the next business day
+              after
+              it is placed.<br>
+              Delivery timing: Monday-Friday 9:30 am till 6:00 pm.
+            </p>
+            <div class="contact-container">
+              <div class="contact-nmb">
+                <p>Do you want to contact us?</p>
+                <p>+44-0800-368-8088</p>
+              </div>
+              <div class="share-social-media">
+                <p>Share to your friends:</p>
+                <span class="social-media-icons">
+                  <span class="facebook">
+                    <i class="fab fa-facebook"></i>
+                  </span>
+                  <span class="twitter">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  <span class="telegram">
+                    <i class="fab fa-telegram"></i>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-product-details">
           <div class="product-characteristics">
             <p class="product-characteristics-header">Characteristics</p>
             <p class="info-header">Manufactures</p>
@@ -238,53 +288,6 @@
               sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
               EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)
             </p>
-          </div>
-
-        </div>
-        <div class="right-product-info-container">
-          <span class="send-to-favorites">
-            <i class="far fa-heart"></i>
-          </span>
-          <p class="product-name">Missha Signature Wrinkle Fill-Up BB Cream <br> SPF37 PA++ № 21 44 ml</p>
-          <div class="price-container">
-            <span class="price">27.68 €</span>
-          </div>
-          <div class="counter-products-block">
-            <div class="counter">
-              <span class="down" onClick='decreaseCount(event, this)'>-</span>
-              <input class="quantity" type="text" value="1">
-              <span class="up" onClick='increaseCount(event, this)'>+</span>
-            </div>
-            <button class="add-to-bag">Add to shopping bag
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
-          </div>
-          <p class="delivery-details">
-            Delivery within 1-2 days.<br>
-            Free delivery with an order amount of 20 € and higher. <br>
-            If the order is made on the weekend or after 5:00 pm, the order is processed on the next business day after
-            it is placed.<br>
-            Delivery timing: Monday-Friday 9:30 am till 6:00 pm.
-          </p>
-          <div class="contact-container">
-            <div class="contact-nmb">
-              <p>Do you want to contact us?</p>
-              <p>+44-0800-368-8088</p>
-            </div>
-            <div class="share-social-media">
-              <p>Share to your friends:</p>
-              <span class="social-media-icons">
-                <span class="facebook">
-                  <i class="fab fa-facebook"></i>
-                </span>
-                <span class="twitter">
-                  <i class="fab fa-twitter"></i>
-                </span>
-                <span class="telegram">
-                  <i class="fab fa-telegram"></i>
-                </span>
-              </span>
-            </div>
           </div>
           <div class="product-informations">
             <p class="product-description-header">Product decription</p>
@@ -331,7 +334,7 @@
               Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
 
               BB-cream is presented in 2 shades:<br><br>
-              21 tones - light beige;<br>
+              21 tone - light beige;<br>
               23 tone - natural beige;<br>
 
               How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
@@ -340,12 +343,17 @@
 
             </p>
           </div>
-
         </div>
+
+        <!-- </div> -->
+        <!-- <div class="right-product-info-container"> -->
+
+
+        <!-- </div> -->
 
       </div>
 
-      
+
       <p class="similar-products">Similar products</p>
       <div class="products-catalog">
 

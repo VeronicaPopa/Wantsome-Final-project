@@ -90,7 +90,6 @@ body {
     align-items: center;
   
     .logo-img {
-      // width: 300px;
       width: 45%;
       margin-top: 70px;
 
@@ -154,7 +153,6 @@ body {
         display: flex;
         align-items: center;
         border: 1px solid #ddd;
-        // width: 40%;
         width: 60%;
         background-color: white;
   
@@ -176,13 +174,11 @@ body {
   
       #error-message-password {
         color: rgb(76, 173, 99);
-        // width: 50%;
         text-align: center;
         margin: 10px 0 10px 0;
         
 
         @media screen and (max-width: 768px) {
-          // width: 75%;
           margin: 5px;
           font-size: 14px;
 
@@ -207,7 +203,6 @@ body {
   
         .sign-in-btn {
           width: 60%;
-          // margin-top: 30px;
           padding: 10px;
           background-color: rgb(76, 173, 99);
           border: 0;
@@ -227,22 +222,16 @@ body {
             margin-top: 10px;
             font-size: 14px;
           }
-
         }
         @media screen and (max-width: 768px) {
           width: 100%;
           height: 80%;
-
         }
-  
-      
     }
     @media screen and (max-width: 768px) {
       width: 100%;
       height: 60vh;
     }
-
   }
-  
 }
 

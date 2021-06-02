@@ -1,8 +1,3 @@
-// $primary-color: rgb(239, 246, 246);
-// $details-color: rgb(255, 181, 198);
-// $header-footer-color: white;
-// $text-color: black;
-// $hover-color: rgb(125, 210, 211);
 
 @import "colors.scss";
 
@@ -34,14 +29,12 @@
                 height: 300px;
                 @media screen and (max-width: 768px) {
                     height: auto;
-                  }
-        
+                }
             }
             @media screen and (max-width: 768px) {
                 height: auto;
                 width: 30%;
-              }
-
+            }
         }
         .main-info-container {
             display: flex;
@@ -55,8 +48,8 @@
                     color: $hover-color;
                 }
                 @media screen and (max-width: 768px) {
-margin-top: 0px;                  }
-
+                    margin-top: 0px;
+                }
             }
 
             .price-container {
@@ -72,8 +65,7 @@ margin-top: 0px;                  }
 
                     @media screen and (max-width: 768px) {
                         padding: 5px;
-                      }
-    
+                    }
                 }
                 .wish-list-btn {
                     color: $details-color;
@@ -83,6 +75,16 @@ margin-top: 0px;                  }
                     }
                 }
             }
+            @media screen and (max-width: 768px) {
+                width: 65%;
+                height: 70%;
+                justify-content: space-between;
+                padding-right: 15px;
+            }
+        }
+        @media screen and (max-width: 1200px) {
+            width: calc(33.33% - 2px);
+            padding: 15px;
         }
         @media screen and (max-width: 768px) {
             width: 100vw;
