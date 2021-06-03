@@ -1,26 +1,4 @@
 
-const menuBar = document.getElementsByClassName("menu")[0];
-function menuList() {
-  const ul = document.getElementsByTagName("ul")[0];
-  ul.classList.toggle("active");
-}
-menuBar.addEventListener("click", menuList);
-
-
-
-
-const navbar = document.getElementsByClassName("navbar")[0];
-const sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-window.onscroll = function () { myFunction() };
-
 const currencyRates = {
   EUR: { value: 1, symbol: "€" },
   USD: { value: 1.22, symbol: "$" },
@@ -162,13 +140,53 @@ function displayProducts(listOfProducts) {
     priceContainer.appendChild(wishListBtn);
 
     const wishListIcon = document.createElement("i");
+    wishListIcon.classList.add("cart");
     wishListIcon.classList.add("fas");
-    wishListIcon.classList.add("fa-shopping-bag");
+    wishListIcon.classList.add("fa-shopping-cart");
     wishListBtn.appendChild(wishListIcon);
+
+    const favListButton = document.createElement("span");
+    favListButton.classList.add("favButton");
+    imgContainer.appendChild(favListButton);
+
+    const favListIcon = document.createElement("i");
+    favListIcon.classList.add("fav-icon");
+    favListIcon.classList.add("far");
+    favListIcon.classList.add("fa-heart");
+    favListButton.appendChild(favListIcon);
+
+
   }
 }
 
 displayProducts(products);
+
+
+// function addToFavorites() {
+//   for (let i = 0; i < products.length; i++) {
+//     const favlistButton = document.getElementsByClassName("favButton")[i];
+//     const favListIcon = document.getElementsByClassName("far")[i];
+//     favlistButton.addEventListener("click", function() {
+//         favListIcon.classList.replace("far", "fas");
+//         favListIcon.style.color = "rgb(255, 181, 198)";
+//         favlistButton.style.display = "block";
+//   });
+//   };  
+// }
+// addToFavorites();
+
+// function addToCart() {
+//   for (let i = 0; i < products.length; i++) {
+//     const wishListIcon = document.getElementsByClassName("cart")[i];
+//     const wishListButton = document.getElementsByClassName("wish-list-btn")[i];
+//     wishListButton.addEventListener("click", function() {
+//       wishListIcon.classList.replace("fa-shopping-cart", "fa-cart-plus");
+//       wishListIcon.style.color = "rgb(125, 210, 211)";
+
+//     });
+//   };
+// };
+// addToCart();
 
 
 // Search Bar function
@@ -188,7 +206,7 @@ searchBar.addEventListener("keyup", (e) => {
 })
 
 
-
+// -------------function for slides-----------
 let counter = 1;
 setInterval(function () {
   document.getElementById('radio' + counter).checked = true;

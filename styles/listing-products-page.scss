@@ -109,9 +109,14 @@ body {
                 .product-container {
                     width: calc(33.33% - 2px);
 
+                    @media screen and (min-width: 1200px) {
+                        width: calc(25% - 2px);
+                        // padding: 15px;
+                    }
+
                     @media screen and (max-width: 992px) {
                         width: calc(50% - 2px);
-                        padding: 15px;
+                        // padding: 15px;
                     }
 
                     @media screen and (max-width: 768px) {
