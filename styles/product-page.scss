@@ -71,6 +71,7 @@ body {
             opacity: 0.8;
             cursor: pointer;
             outline: none;
+            
             &:hover {
               opacity: 1;
               transition: all 0.2s ease;
@@ -110,6 +111,7 @@ body {
                 cursor: pointer;
               }
             }
+           
           }
           .product-name {
             font-size: 26px;
@@ -123,7 +125,7 @@ body {
 
           .price-container {
             margin-top: 50px;
-            .price {
+            .product-price {
               font-size: 36px;
               @media screen and (max-width: 768px) {
                 font-size: 26px;
@@ -204,6 +206,10 @@ body {
                 height: 40px;
                 width: 200px;
                 font-size: 16px;
+              }
+              .fa-cart-plus {
+                font-size: 26px;
+                margin-left: 10px;
               }
             }
           }

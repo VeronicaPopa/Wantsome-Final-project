@@ -422,23 +422,32 @@ function addToFavorites() {
   for (let i = 0; i < productResult.length; i++) {
     const favlistButton = document.getElementsByClassName("favButton")[i];
     const favListIcon = document.getElementsByClassName("fav-icon")[i];
-    favlistButton.addEventListener("click", function() {
+    favlistButton.addEventListener("click", function () {
+      if (favListIcon.classList.contains("far")) {
         favListIcon.classList.replace("far", "fas");
         favListIcon.style.color = "rgb(255, 181, 198)";
-        favlistButton.style.display = "block";
-  });
-  };  
-}
+      } else {
+        favListIcon.classList.replace("fas", "far");
+        favListIcon.style.color = "rgb(214, 214, 214)";
+      }
+    });
+  };
+};
 addToFavorites();
 
 function addToCart() {
   for (let i = 0; i < productResult.length; i++) {
     const wishListIcon = document.getElementsByClassName("cart")[i];
     const wishListButton = document.getElementsByClassName("wish-list-btn")[i];
-    wishListButton.addEventListener("click", function() {
-      wishListIcon.classList.replace("fa-shopping-cart", "fa-cart-plus");
-      wishListIcon.style.color = "rgb(125, 210, 211)";
-
+    wishListButton.addEventListener("click", function () {
+      if (wishListIcon.classList.contains("fa-shopping-cart")) {
+        wishListIcon.classList.replace("fa-shopping-cart", "fa-cart-plus");
+        wishListIcon.style.color = "rgb(125, 210, 211)";
+      }
+      else {
+        wishListIcon.classList.replace("fa-cart-plus", "fa-shopping-cart");
+        wishListIcon.style.color = "rgb(255, 181, 198)";
+      }
     });
   };
 };

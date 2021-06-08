@@ -148,7 +148,6 @@ function displayProducts(listOfProducts) {
     const favListButton = document.createElement("span");
     favListButton.classList.add("favButton");
     imgContainer.appendChild(favListButton);
-
     const favListIcon = document.createElement("i");
     favListIcon.classList.add("fav-icon");
     favListIcon.classList.add("far");

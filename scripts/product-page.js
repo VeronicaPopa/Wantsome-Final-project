@@ -48,13 +48,34 @@ const currencyRates = {
   USD: { value: 1.22, symbol: "$" },
   RON: { value: 4.93, symbol: "RON" }
 }
+
 let selectedRate = "EUR";
 const currencySelect = document.getElementById("currencySelect");
 
 currencySelect.addEventListener("change", (event) => {
   selectedRate = event.target.value;
   displayProducts(products);
+  displayCurrentProduct();
 });
+
+let currentProduct = 
+  {
+    brand: "Missha",
+    productName: "Signature Wrinkle Fill-Up BB Cream",
+    details: "SPF37 PA++ № 21 44 ml",
+    price: 27.68 
+  }
+
+function displayCurrentProduct() {
+  const currentProductName = document.getElementsByClassName("product-name")[0];
+  currentProductName.textContent = (currentProduct.brand + " " + currentProduct.productName + " " + currentProduct.details);
+  const productPrice = document.getElementsByClassName("product-price")[0];
+  const rateInfo = currencyRates[selectedRate];
+  productPrice.textContent = (currentProduct.price * rateInfo.value).toFixed(2) + " " + rateInfo.symbol;
+  
+}
+displayCurrentProduct();
+
 
 let products = [
   {
@@ -86,7 +107,7 @@ let products = [
     details: "30 ml",
     price: "6.12"
   },
-   {
+  {
     image: "../assets/images/bb-creams/lapalette_17.jpg",
     brand: "Lapalette",
     productName: "Silky Tension Cover Pact Original White Horse",
@@ -153,28 +174,34 @@ function displayProducts(listOfProducts) {
 displayProducts(products);
 
 
-// function addToFavorites() {
-//     for (let i = 0; i < products.length; i++) {
-//       const favlistButton = document.getElementsByClassName("favButton")[i];
-//       const favListIcon = document.getElementsByClassName("fav-icon")[i];
-//       favlistButton.addEventListener("click", function() {
-//           favListIcon.classList.replace("far", "fas");
-//           favListIcon.style.color = "rgb(255, 181, 198)";
-//           favlistButton.style.display = "block";
-//     });
-//     };  
-//   }
-//   addToFavorites();
-  
-//   function addToCart() {
-//     for (let i = 0; i < products.length; i++) {
-//       const wishListIcon = document.getElementsByClassName("cart")[i];
-//       const wishListButton = document.getElementsByClassName("wish-list-btn")[i];
-//       wishListButton.addEventListener("click", function() {
-//         wishListIcon.classList.replace("fa-shopping-cart", "fa-cart-plus");
-//         wishListIcon.style.color = "rgb(125, 210, 211)";
-  
-//       });
-//     };
-//   };
-//   addToCart();
+function sendToFavorites() {
+  const favlistButton = document.getElementsByClassName("send-to-favorites")[0];
+  const favListIcon = document.getElementsByClassName("heart-icon")[0];
+  favlistButton.addEventListener("click", function () {
+    if (favListIcon.classList.contains("far")) {
+      favListIcon.classList.replace("far", "fas");
+      favListIcon.style.color = "rgb(255, 181, 198)";
+    } else {
+      favListIcon.classList.replace("fas", "far");
+      favListIcon.style.color = "rgb(214, 214, 214)";
+    };
+  });
+}
+sendToFavorites();
+
+function addToCartMainProduct() {
+  const addToCartBtn = document.getElementsByClassName("add-to-bag")[0];
+  const cartIcon = document.getElementsByClassName("cart-icon")[0];
+  addToCartBtn.addEventListener("click", function () {
+    if (cartIcon.classList.contains("fa-cart-arrow-down")) {
+      cartIcon.classList.replace("fa-cart-arrow-down", "fa-cart-plus");
+      // cartIcon.style.color = "rgb(125, 210, 211)";
+    }
+    else {
+      cartIcon.classList.replace("fa-cart-plus", "fa-cart-arrow-down");
+      // cartIcon.style.color = "rgb(255, 181, 198)";
+    }
+  });
+};
+addToCartMainProduct();
+

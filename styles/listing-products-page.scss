@@ -8,10 +8,9 @@
     padding: 0;
 }
 html {
-    // max-height: 1000000px;
-    // height: 100%;
     min-width: 320px;
 }
+
 body {
     background-color: $primary-color;
     font-family: "Lato", sans-serif;
@@ -46,6 +45,7 @@ body {
                     height: 150px;
                 }                
             }
+
             .filter-by-product-name-container {
                 line-height: 1.5;
                 padding: 30px;
@@ -67,6 +67,7 @@ body {
                     height: 150px;
                 }   
             }
+
             form {
                 label {
                     margin: 5px;

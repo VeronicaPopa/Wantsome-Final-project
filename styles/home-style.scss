@@ -8,22 +8,17 @@
     margin: 0;
     padding: 0;
 }
-// html {
-//     // max-height: 1000000px;
-//     // height: 100%;
-// }
+
 body {
     background-color: $primary-color;
     font-family: "Lato", sans-serif;
     margin: 0 auto;
     height: 100vh;
 
-
     .sticky {
         position: fixed;
         top: 0;
         width: 100%;
-
     }
 
     .slider {
@@ -57,7 +52,6 @@ body {
         @media screen and (max-width: 375px) {
             height: 180px;
         }
-
     }
 
     .slides input {
@@ -67,7 +61,6 @@ body {
     .slide {
         width: 20%;
         transition: 2s;
-
         position: relative;
     }
 
@@ -76,10 +69,8 @@ body {
         z-index: 2;
         letter-spacing: 10px;
         opacity: 0.7;
-
-       
-
     }
+
     .sales {
         top: 30%;
         left: 20%;
@@ -107,7 +98,6 @@ body {
         top: 0;
         bottom: 0;
         margin: auto auto;
-
         height: 100%;
         object-fit: cover;        
     }
