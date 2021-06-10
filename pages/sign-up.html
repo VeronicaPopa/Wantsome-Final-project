@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/sign-up.css">
+    <link rel="stylesheet" href="../styles/all.css">
+    <link rel="stylesheet" href="../styles/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&display=swap" rel="stylesheet">
+
+
+
+
+    <title>Sign Up</title>
+  </head>
+
+  <body>
+    <div id="for-seller">
+      <h1>Moonglow Beauty Store</h1>
+      <p>Your go to stop place for hight quality cosmestic products & skin care </p>
+      <button type="submit">for sellers</button>
+    </div>
+    <div id="sign-up-container">
+      <img src="../assets/images/logo.svg" class="logo-img" alt="logo-image">
+      <form>
+        <div class="data-container">
+          <div class="label-input-data">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" placeholder="Value">  
+          </div>
+          <div class="label-input-data">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" placeholder="Value">
+          </div>
+        </div>
+        <div class="data-container">
+          <div class="label-input-data email">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john.doe@gmail.com">
+            <div id="validation-message" class="visibility-of-message">
+              <i class="fas fa-check-circle"></i>
+              <p>Email address validated!</p>
+            </div>
+          </div>
+          <div class="label-input-data password">
+            <label for="password">Password</label>
+            <div class="password-container">
+              <input type="password" id="password" placeholder="********">
+              <i class="fas fa-eye-slash visibility-toggle"></i>
+            </div>
+            <p id="error-message-password" class="error-visibility-hidden"> The password must contain at least 11 characters
+              and one number.</p>
+          </div>
+        </div>
+          <div class="data-container">
+            <div class="label-input-data">
+              <label for="city">City</label>
+              <input type="text" id="city" placeholder="Value">
+            </div>
+            <div class="label-input-data">
+              <label for="country">Country</label>
+              <input type="text" id="country" placeholder="Select City First" disabled>
+            </div>
+          </div>
+
+
+        
+
+
+
+        <button class="sign-in-btn" type="submit" disabled>sign up</button>
+        <a href="../pages/login-page.html" class="a-link">Already have an account? Sign in!</a>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="../scripts/sign-up.js"></script>
+  </body>
+
+</html>

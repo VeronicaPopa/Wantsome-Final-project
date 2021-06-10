@@ -1,0 +1,350 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+body #for-seller {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #035b69;
+  position: relative;
+}
+
+body #for-seller::before {
+  content: "";
+  background-image: url("../assets/images/products1.png");
+  background-size: cover;
+  background-position: 20% 50%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.6;
+}
+
+body #for-seller p {
+  font-size: 26px;
+  text-align: center;
+  padding: 0 70px;
+  margin: 0;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  body #for-seller p {
+    font-size: 18px;
+  }
+}
+
+body #for-seller h1 {
+  position: relative;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  body #for-seller h1 {
+    font-size: 24px;
+  }
+}
+
+body #for-seller button {
+  margin: 50px;
+  width: 150px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #035b69;
+  text-transform: uppercase;
+  color: #035b69;
+  font-weight: bold;
+  position: relative;
+}
+
+body #for-seller button:hover {
+  -webkit-box-shadow: 0px 0px 3px 1px;
+          box-shadow: 0px 0px 3px 1px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  body #for-seller {
+    width: 100%;
+    height: 30vh;
+  }
+}
+
+body #sign-up-container {
+  width: 60%;
+  background-color: #e4fafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #sign-up-container .logo-img {
+  width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  body #sign-up-container .logo-img {
+    margin: 0 0 15px 0;
+    width: 35%;
+  }
+}
+
+body #sign-up-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  height: 60%;
+}
+
+body #sign-up-container form > :first-child, body #sign-up-container form > :nth-child(3) {
+  padding-bottom: 32px;
+}
+
+body #sign-up-container form .data-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+body #sign-up-container form .data-container .label-input-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 47%;
+}
+
+@media screen and (max-width: 600px) {
+  body #sign-up-container form .data-container .label-input-data {
+    width: 70%;
+    padding-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body #sign-up-container form .data-container .password {
+    padding-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body #sign-up-container form .data-container .email {
+    padding-bottom: 13px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body #sign-up-container form .data-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+}
+
+body #sign-up-container form .border-color {
+  border: 2px solid #4cad63;
+}
+
+body #sign-up-container form label {
+  margin-bottom: 5px;
+  width: 100%;
+  opacity: 0.7;
+}
+
+body #sign-up-container form input {
+  border: 1px solid #ddd;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+body #sign-up-container form #validation-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  font-size: 14px;
+}
+
+body #sign-up-container form #validation-message .fas {
+  color: #4cad63;
+  margin-top: 5px;
+}
+
+body #sign-up-container form #validation-message p {
+  color: #4cad63;
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  body #sign-up-container form #validation-message p {
+    margin: 0;
+  }
+}
+
+body #sign-up-container form .visibility-of-message {
+  visibility: hidden;
+}
+
+body #sign-up-container form .password-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #ddd;
+  width: 100%;
+  background-color: white;
+}
+
+body #sign-up-container form .password-container input {
+  border: 0;
+  width: 100%;
+  outline: none;
+  color: #333;
+  font-size: 16px;
+  padding: 9px;
+}
+
+body #sign-up-container form .password-container i {
+  margin: 0 10px;
+  color: #aaa;
+  cursor: default;
+}
+
+body #sign-up-container form #error-message-password {
+  color: #4cad63;
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+}
+
+body #sign-up-container form .error-visibility-hidden {
+  visibility: hidden;
+  color: #4cad63;
+}
+
+body #sign-up-container form .sign-in-btn {
+  width: 50%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #4cad63;
+  border: 0;
+  outline: none;
+  text-transform: uppercase;
+  color: white;
+}
+
+body #sign-up-container form .sign-in-btn:hover {
+  cursor: pointer;
+}
+
+body #sign-up-container form .a-link {
+  margin-top: 30px;
+  color: #4cad63;
+}
+
+@media screen and (max-width: 768px) {
+  body #sign-up-container form .a-link {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body #sign-up-container form {
+    width: 100%;
+    height: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body #sign-up-container {
+    width: 100%;
+    height: 70vh;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body #sign-up-container {
+    height: auto;
+  }
+}
+/*# sourceMappingURL=sign-up.css.map */

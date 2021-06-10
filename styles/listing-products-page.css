@@ -332,39 +332,34 @@ header .first-container .right-side-box {
           align-items: center;
 }
 
-header .first-container .right-side-box .profileBtn {
+header .first-container .right-side-box .authentication {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
   margin: 0 15px;
 }
 
-header .first-container .right-side-box .profileBtn .authentication {
-  margin: 0 5px;
-  text-decoration: none;
+header .first-container .right-side-box .authentication span {
   color: black;
 }
 
-@media screen and (max-width: 1366px) {
-  header .first-container .right-side-box .profileBtn .authentication {
-    display: none;
-  }
-}
-
-header .first-container .right-side-box .profileBtn .authentication:hover {
+header .first-container .right-side-box .authentication span:hover {
   color: #7dd2d3;
-  cursor: pointer;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
 
-header .first-container .right-side-box .profileBtn .fas {
+@media screen and (max-width: 1200px) {
+  header .first-container .right-side-box .authentication span {
+    display: none;
+  }
+}
+
+header .first-container .right-side-box .authentication .fas {
   margin-right: 10px;
   color: #ffb5c6;
   border-radius: 50%;

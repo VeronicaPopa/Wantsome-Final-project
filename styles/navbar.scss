@@ -91,28 +91,24 @@ header {
             justify-content: center;
             align-items: center;
 
-            .profileBtn {
+            .authentication {
                 display: flex;
-                justify-content: center;
                 align-items: center;
+                text-decoration: none;
                 margin: 0 15px;
 
-                .authentication {
-                    margin: 0 5px;
-                    text-decoration: none;
+                span {
                     color: black;
-
-                    @media screen and (max-width: 1366px) {
-                        display: none;
-                    }
 
                     &:hover {
                         color: $hover-color;
-                        cursor: pointer;
+                        // cursor: pointer;
                         transition: 0.2s ease;
                     }
+                    @media screen and (max-width: 1200px) {
+                        display: none;
+                    }
                 }
-
                 .fas {
                     margin-right: 10px;
                     color: $details-color;
@@ -124,6 +120,7 @@ header {
                     justify-content: center;
                     align-items: center;
                 }
+                
             }
 
             #langSelect,
@@ -357,7 +354,6 @@ header {
                     margin-bottom: 15px;
                     letter-spacing: 0.48px;
                     &:hover {
-
                         cursor: pointer;
                         color: $details-color;
                         text-decoration: underline;
@@ -408,7 +404,7 @@ header {
                 width: 100%;
             }
         }
-        
+
         @media screen and (max-width: 768px) {
             flex-direction: column;
             padding-left: 20px;

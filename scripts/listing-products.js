@@ -350,6 +350,7 @@ sortSelect.addEventListener("change", (event) => {
 
 function onSortChange(event) {
   const { value } = event.target;
+  
   switch (value) {
     case "name-a-z": {
       sortBy("brand", "asc");
