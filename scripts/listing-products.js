@@ -338,7 +338,6 @@ function sortBy(field, direction) {
     ) {
       return 1;
     }
-
     return 0;
   });
   displayProducts(productResult);
@@ -405,8 +404,6 @@ function perPageShow(event) {
     }
   }
 }
-
-
 // ----------------schimbare valuta
 const currencySelect = document.getElementById("currencySelect");
 
@@ -415,11 +412,7 @@ currencySelect.addEventListener("change", (event) => {
   displayProducts(productResult);
 });
 
-
-
-
-
-function addToFavorites() {
+(function addToFavorites() {
   for (let i = 0; i < productResult.length; i++) {
     const favlistButton = document.getElementsByClassName("favButton")[i];
     const favListIcon = document.getElementsByClassName("fav-icon")[i];
@@ -433,10 +426,9 @@ function addToFavorites() {
       }
     });
   };
-};
-addToFavorites();
+})();
 
-function addToCart() {
+(function addToCart() {
   for (let i = 0; i < productResult.length; i++) {
     const wishListIcon = document.getElementsByClassName("cart")[i];
     const wishListButton = document.getElementsByClassName("wish-list-btn")[i];
@@ -451,5 +443,14 @@ function addToCart() {
       }
     });
   };
-};
-addToCart();
+})();
+
+(function redirectToProductPage() {
+  for (let i = 0; i < productResult.length; i++) {
+    const productName = document.getElementsByClassName("name")[i];
+    productName.addEventListener("click", function (event) {
+      event.preventDefault();
+      window.location.href = '../pages/product-page.html';
+    })
+  }
+})();

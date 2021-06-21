@@ -108,7 +108,6 @@ passwordInput.addEventListener("keyup", addPasswordValidResult);
     }
   })
 })();
-// enableCountryInput();
 
 function updateSubmitStatus() {
   if ((isValidEmail) && (isValidPass)) {

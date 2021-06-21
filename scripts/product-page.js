@@ -1,4 +1,3 @@
-
 // ----------Slide images ----------
 let slideIndex = 1;
 showDivs(slideIndex);
@@ -31,6 +30,7 @@ function increaseCount(a, b) {
   value++;
   input.value = value;
 }
+
 function decreaseCount(a, b) {
   const input = b.nextElementSibling;
   let value = parseInt(input.value, 10);
@@ -41,7 +41,6 @@ function decreaseCount(a, b) {
     input.value = value;
   }
 }
-
 
 const currencyRates = {
   EUR: { value: 1, symbol: "€" },
@@ -58,13 +57,13 @@ currencySelect.addEventListener("change", (event) => {
   displayCurrentProduct();
 });
 
-let currentProduct = 
-  {
-    brand: "Missha",
-    productName: "Signature Wrinkle Fill-Up BB Cream",
-    details: "SPF37 PA++ № 21 44 ml",
-    price: 27.68 
-  }
+let currentProduct =
+{
+  brand: "Missha",
+  productName: "Signature Wrinkle Fill-Up BB Cream",
+  details: "SPF37 PA++ № 21 44 ml",
+  price: 27.68
+}
 
 function displayCurrentProduct() {
   const currentProductName = document.getElementsByClassName("product-name")[0];
@@ -72,10 +71,9 @@ function displayCurrentProduct() {
   const productPrice = document.getElementsByClassName("product-price")[0];
   const rateInfo = currencyRates[selectedRate];
   productPrice.textContent = (currentProduct.price * rateInfo.value).toFixed(2) + " " + rateInfo.symbol;
-  
 }
-displayCurrentProduct();
 
+displayCurrentProduct();
 
 let products = [
   {
@@ -85,7 +83,6 @@ let products = [
     details: "SPF 28 PA ++ 45 ml",
     price: "25.48"
   },
-
   {
     image: "../assets/images/bb-creams/dr._jart.jpg",
     brand: "Dr.Jart+",
@@ -114,8 +111,8 @@ let products = [
     details: "SPF50+PA+++ №21, 12g* 2",
     price: 17.59
   }
-
 ];
+
 function displayProducts(listOfProducts) {
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
@@ -171,8 +168,8 @@ function displayProducts(listOfProducts) {
     favListButton.appendChild(favListIcon);
   }
 }
-displayProducts(products);
 
+displayProducts(products);
 
 function sendToFavorites() {
   const favlistButton = document.getElementsByClassName("send-to-favorites")[0];
@@ -187,6 +184,7 @@ function sendToFavorites() {
     };
   });
 }
+
 sendToFavorites();
 
 function addToCartMainProduct() {
@@ -195,13 +193,11 @@ function addToCartMainProduct() {
   addToCartBtn.addEventListener("click", function () {
     if (cartIcon.classList.contains("fa-cart-arrow-down")) {
       cartIcon.classList.replace("fa-cart-arrow-down", "fa-cart-plus");
-      // cartIcon.style.color = "rgb(125, 210, 211)";
     }
     else {
       cartIcon.classList.replace("fa-cart-plus", "fa-cart-arrow-down");
-      // cartIcon.style.color = "rgb(255, 181, 198)";
     }
   });
 };
-addToCartMainProduct();
 
+addToCartMainProduct();

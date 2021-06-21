@@ -12,15 +12,13 @@ currencySelect.addEventListener("change", (event) => {
   displayProducts(products);
 });
 
-
-
 let products = [
   {
-    image: "../assets/images/aromatica_3.jpg",
-    brand: "Aromatica",
-    productName: "Lavender Relaxing Massage&Body Oil",
-    details: "100 ml",
-    price: "9.83"
+    image: "../assets/images/bb-creams/missha_39.jpg",
+    brand: "Missha",
+    productName: "Signature Wrinkle Fill-Up BB Cream",
+    details: "SPF37 PA++ № 21 44 ml",
+    price: 27.68
   },
   {
     image: "../assets/images/dr._ceuracle.jpg",
@@ -157,39 +155,9 @@ function displayProducts(listOfProducts) {
 
   }
 }
-
 displayProducts(products);
 
-
-// function addToFavorites() {
-//   for (let i = 0; i < products.length; i++) {
-//     const favlistButton = document.getElementsByClassName("favButton")[i];
-//     const favListIcon = document.getElementsByClassName("far")[i];
-//     favlistButton.addEventListener("click", function() {
-//         favListIcon.classList.replace("far", "fas");
-//         favListIcon.style.color = "rgb(255, 181, 198)";
-//         favlistButton.style.display = "block";
-//   });
-//   };  
-// }
-// addToFavorites();
-
-// function addToCart() {
-//   for (let i = 0; i < products.length; i++) {
-//     const wishListIcon = document.getElementsByClassName("cart")[i];
-//     const wishListButton = document.getElementsByClassName("wish-list-btn")[i];
-//     wishListButton.addEventListener("click", function() {
-//       wishListIcon.classList.replace("fa-shopping-cart", "fa-cart-plus");
-//       wishListIcon.style.color = "rgb(125, 210, 211)";
-
-//     });
-//   };
-// };
-// addToCart();
-
-
 // Search Bar function
-
 const searchBar = document.getElementById("search-bar");
 
 searchBar.addEventListener("keyup", (e) => {
