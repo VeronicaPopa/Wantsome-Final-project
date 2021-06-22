@@ -231,7 +231,7 @@ body #sign-in-container form .password-container input {
 body #sign-in-container form .password-container i {
   margin: 0 10px;
   color: #aaa;
-  cursor: default;
+  cursor: pointer;
 }
 
 body #sign-in-container form #error-message-password {

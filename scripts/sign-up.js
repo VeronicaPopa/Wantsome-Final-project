@@ -8,6 +8,21 @@ let isValidEmail;
 let isValidPass;
 let isValidAccount
 
+const visibilityToggle = document.getElementsByClassName("visibility-toggle")[0];
+let password = true;
+
+visibilityToggle.addEventListener("click", function () {
+  if (password) {
+    passwordInput.setAttribute("type", "text");
+    visibilityToggle.classList.replace("fa-eye-slash", "fa-eye");
+  } else {
+    passwordInput.setAttribute("type", "password");
+    visibilityToggle.classList.replace("fa-eye", "fa-eye-slash");
+  }
+  password = !password;
+})
+
+
 emailInput.addEventListener("click", function () {
   emailInput.classList.add("border-color");
 })
@@ -21,7 +36,6 @@ passwordContainer.addEventListener("click", function () {
 })
 
 // functie de validare a email-ului, cerinte: sa contina @ si .
-
 function emailValidator() {
   const email = emailInput.value;
   let splitByAt = email.split("@");
@@ -52,22 +66,6 @@ function addEmailValidResult() {
 }
 
 emailInput.addEventListener("keyup", addEmailValidResult);
-
-
-const visibilityToggle = document.getElementsByClassName("visibility-toggle")[0];
-let password = true;
-
-visibilityToggle.addEventListener("click", function () {
-  if (password) {
-    passwordInput.setAttribute("type", "text");
-    visibilityToggle.classList.replace("fa-eye-slash", "fa-eye");
-  } else {
-    passwordInput.setAttribute("type", "password");
-    visibilityToggle.classList.replace("fa-eye", "fa-eye-slash");
-  }
-  password = !password;
-})
-
 
 // functie de validare a parolei.cerinte : sa aiba o lungime mai mare de 8 caractere si sa contina cel putin un numar 
 function stringValidator() {
@@ -116,7 +114,6 @@ function updateSubmitStatus() {
     signUpBtn.setAttribute("disabled", true);
   }
 }
-
 
 signUpBtn.addEventListener("click", function (event) {
   event.preventDefault();

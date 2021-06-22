@@ -6,8 +6,6 @@ function menuList() {
 }
 menuBar.addEventListener("click", menuList);
 
-
-
 // ----------sticky navbar--------------
 const navbar = document.getElementsByClassName("navbar")[0];
 const sticky = navbar.offsetTop;

@@ -3008,8 +3008,44 @@ let allProducts =
   }
 
 ];
+let products = [
+  {
+    id: "17",
+    image: "../assets/images/bb-creams/dr._jart.jpg",
+    brand: "Dr.Jart+",
+    productName: "Premium ВВ Beauty Balm",
+    details: "SPF-45 Pa+++ 40 ml",
+    price: 41.65,
+  },
+  {
+    id: "18",
+    image: "../assets/images/bb-creams/holika_holika_4.jpg",
+    brand: "Holika Holika",
+    productName: "Shimmering Petit BB Cream",
+    details: "30ml",
+    price: "6.12"
+  },
+  {
+    id: "19",
+    image: "../assets/images/bb-creams/holika_holika_5jpg.jpeg",
+    brand: "Holika Holika",
+    productName: "Bouncing Petit BB Cream",
+    details: "30 ml",
+    price: "6.12"
+  },
+  {
+    id: "20",
+    image: "../assets/images/bb-creams/lapalette_17.jpg",
+    brand: "Lapalette",
+    productName: "Silky Tension Cover Pact Original White Horse",
+    details: "SPF50+PA+++ №21, 12g* 2",
+    price: 17.59
+  }
+];
 
 let slidePosition = 1;
+let currentProduct = getCurrentProduct();
+
 
 function displaySlide(position) {
   let i;
@@ -3051,18 +3087,9 @@ function decreaseProductCartCount() {
   }
 }
 
-const currencyRates = {
-  EUR: { value: 1, symbol: "€" },
-  USD: { value: 1.22, symbol: "$" },
-  RON: { value: 4.93, symbol: "RON" }
-}
-
-let selectedRate = "EUR";
-const currencySelect = document.getElementById("currencySelect");
-
 currencySelect.addEventListener("change", (event) => {
   selectedRate = event.target.value;
-  displaySimilarProducts(products);
+  displayProducts(products);
   displayCurrentProduct();
 });
 
@@ -3071,7 +3098,6 @@ function getProductId() {
   return window.location.search.replace('?productId=', '');
 }
 
-let currentProduct = getCurrentProduct();
 
 function getCurrentProduct() {
   const currentProductId = getProductId();
@@ -3109,42 +3135,8 @@ function displayCurrentProduct() {
 
 displayCurrentProduct();
 
-let products = [
-  {
-    id: "17",
-    image: "../assets/images/bb-creams/dr._jart.jpg",
-    brand: "Dr.Jart+",
-    productName: "Premium ВВ Beauty Balm",
-    details: "SPF-45 Pa+++ 40 ml",
-    price: 41.65,
-  },
-  {
-    id: "18",
-    image: "../assets/images/bb-creams/holika_holika_4.jpg",
-    brand: "Holika Holika",
-    productName: "Shimmering Petit BB Cream",
-    details: "30ml",
-    price: "6.12"
-  },
-  {
-    id: "19",
-    image: "../assets/images/bb-creams/holika_holika_5jpg.jpeg",
-    brand: "Holika Holika",
-    productName: "Bouncing Petit BB Cream",
-    details: "30 ml",
-    price: "6.12"
-  },
-  {
-    id: "20",
-    image: "../assets/images/bb-creams/lapalette_17.jpg",
-    brand: "Lapalette",
-    productName: "Silky Tension Cover Pact Original White Horse",
-    details: "SPF50+PA+++ №21, 12g* 2",
-    price: 17.59
-  }
-];
 
-function displaySimilarProducts(listOfProducts) {
+function displayProducts(listOfProducts) {
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
   for (let product of listOfProducts) {
@@ -3203,4 +3195,4 @@ function displaySimilarProducts(listOfProducts) {
   registerAddToCartEvents(listOfProducts);
 }
 
-displaySimilarProducts(products);
+displayProducts(products);

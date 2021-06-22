@@ -20,7 +20,6 @@ passwordContainer.addEventListener("click", function () {
 })
 
 // functie de validare a email-ului, cerinte: sa contina @ si .
-
 function emailValidator() {
   const email = emailInput.value;
   let splitByAt = email.split("@");
@@ -98,8 +97,6 @@ function addPasswordValidResult() {
 }
 passwordInput.addEventListener("keyup", addPasswordValidResult);
 
-
-
 function accountValidation() {
   const email = emailInput.value;
   const passwordValue = passwordInput.value;
@@ -124,7 +121,6 @@ function addAccountValidResult() {
   }
 }
 passwordInput.addEventListener("keyup", addAccountValidResult);
-
 
 function updateSubmitStatus() {
   if ((isValidEmail) && (isValidPass) && (isValidAccount)) {

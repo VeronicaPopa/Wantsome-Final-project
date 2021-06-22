@@ -46,3 +46,12 @@ function registerNavigateToProductEvent(products) {
     })
   }
 };
+
+const currencyRates = {
+  EUR: { value: 1, symbol: "€" },
+  USD: { value: 1.22, symbol: "$" },
+  RON: { value: 4.93, symbol: "RON" }
+}
+
+let selectedRate = "EUR";
+const currencySelect = document.getElementById("currencySelect");

@@ -1,11 +1,3 @@
-
-const currencyRates = {
-  EUR: { value: 1, symbol: "€" },
-  USD: { value: 1.22, symbol: "$" },
-  RON: { value: 4.93, symbol: "RON" }
-}
-let selectedRate = "EUR";
-
 let products = [
   {
     id: "13",
@@ -201,7 +193,12 @@ let products = [
   }
 ];
 
-function displaySimilarProducts(listOfProducts) {
+currencySelect.addEventListener("change", (event) => {
+  selectedRate = event.target.value;
+  displayProducts(productResult);
+});
+
+function displayProducts(listOfProducts) {
   productResult = listOfProducts;
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
@@ -291,7 +288,7 @@ const filterOptions = document.querySelectorAll("[type = checkbox]");
 let filterBrandCriterias = [];
 let filterProductNameCriterias = [];
 let productResult = [];
-displaySimilarProducts(products.slice(0, 12));
+displayProducts(products.slice(0, 12));
 registerChangeEvent();
 
 function registerChangeEvent() {
@@ -300,7 +297,7 @@ function registerChangeEvent() {
       getSelectedFilter();
       const filteredProductsByBrand = filterProducts(filterBrandCriterias, products);
       const filteredProductsByProductName = filterProducts(filterProductNameCriterias, filteredProductsByBrand);
-      displaySimilarProducts(filteredProductsByProductName);
+      displayProducts(filteredProductsByProductName);
     })
   }
 }
@@ -368,7 +365,7 @@ function sortBy(field, direction) {
     }
     return 0;
   });
-  displaySimilarProducts(productResult);
+  displayProducts(productResult);
 }
 
 sortSelect.addEventListener("change", (event) => {
@@ -409,33 +406,25 @@ searchBar.addEventListener("keyup", (e) => {
       product.details.toLowerCase().includes(searchString);
 
   })
-  displaySimilarProducts(filteredCharacters);
+  displayProducts(filteredCharacters);
 })
 
 const perPageSelect = document.getElementById("per-page");
 perPageSelect.addEventListener("change", (event) => {
-  perPageShow(event);
+  showItemsPerPage(event);
 });
 
-function perPageShow(event) {
+function showItemsPerPage(event) {
   const { value } = event.target;
 
   switch (value) {
     case "12": {
-      // console.log(productResult.slice(0, 8));
-      displaySimilarProducts(products.slice(0, 12));
+      displayProducts(products.slice(0, 12));
       break;
     }
     case "24": {
-      displaySimilarProducts(products.slice(0, 24));
+      displayProducts(products.slice(0, 24));
       break;
     }
   }
 }
-// ----------------schimbare valuta
-const currencySelect = document.getElementById("currencySelect");
-
-currencySelect.addEventListener("change", (event) => {
-  selectedRate = event.target.value;
-  displaySimilarProducts(productResult);
-});

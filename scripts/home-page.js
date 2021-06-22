@@ -1,16 +1,3 @@
-const currencyRates = {
-  EUR: { value: 1, symbol: "€" },
-  USD: { value: 1.22, symbol: "$" },
-  RON: { value: 4.93, symbol: "RON" }
-}
-let selectedRate = "EUR";
-const currencySelect = document.getElementById("currencySelect");
-
-currencySelect.addEventListener("change", (event) => {
-  selectedRate = event.target.value;
-  displaySimilarProducts(products);
-});
-
 let products = [
   {
     id: "1",
@@ -120,7 +107,24 @@ let products = [
   },
 ];
 
-function displaySimilarProducts(listOfProducts) {
+const searchBar = document.getElementById("search-bar");
+
+// -------------function for slides-----------
+let counter = 1;
+setInterval(function () {
+  document.getElementById('radio' + counter).checked = true;
+  counter++;
+  if (counter > 4) {
+    counter = 1;
+  }
+}, 5000);
+
+currencySelect.addEventListener("change", (event) => {
+  selectedRate = event.target.value;
+  displayProducts(products);
+});
+
+function displayProducts(listOfProducts) {
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
 
@@ -176,15 +180,13 @@ function displaySimilarProducts(listOfProducts) {
 
   }
 }
-displaySimilarProducts(products);
+displayProducts(products);
 
 registerNavigateToProductEvent(products);
 registerAddToFavoritesEvents(products);
 registerAddToCartEvents(products);
 
 // Search Bar function
-const searchBar = document.getElementById("search-bar");
-
 searchBar.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
   const filteredCharacters = products.filter((product) => {
@@ -194,16 +196,5 @@ searchBar.addEventListener("keyup", (e) => {
       product.details.toLowerCase().includes(searchString);
     ;
   })
-  displaySimilarProducts(filteredCharacters);
+  displayProducts(filteredCharacters);
 })
-
-
-// -------------function for slides-----------
-let counter = 1;
-setInterval(function () {
-  document.getElementById('radio' + counter).checked = true;
-  counter++;
-  if (counter > 4) {
-    counter = 1;
-  }
-}, 5000);
