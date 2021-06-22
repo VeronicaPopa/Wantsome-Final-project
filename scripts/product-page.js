@@ -1,38 +1,3 @@
-function increaseCount(a, b) {
-  const input = b.previousElementSibling;
-  let value = parseInt(input.value, 10);
-  value = isNaN(value) ? 0 : value;
-  value++;
-  input.value = value;
-}
-
-function decreaseCount(a, b) {
-  const input = b.nextElementSibling;
-  let value = parseInt(input.value, 10);
-
-  if (value > 1) {
-    value = isNaN(value) ? 0 : value;
-    value--;
-    input.value = value;
-  }
-}
-
-const currencyRates = {
-  EUR: { value: 1, symbol: "€" },
-  USD: { value: 1.22, symbol: "$" },
-  RON: { value: 4.93, symbol: "RON" }
-}
-
-let selectedRate = "EUR";
-let slideIndex = 1;
-const currencySelect = document.getElementById("currencySelect");
-
-currencySelect.addEventListener("change", (event) => {
-  selectedRate = event.target.value;
-  displaySimilarProducts(products);
-  displayCurrentProduct();
-});
-
 let allProducts =
 [
   {
@@ -129,10 +94,9 @@ let allProducts =
     price: "10.90",
     images: [
       '../assets/images/dr._ceuracle.jpg',
-      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
-      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
-      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
-      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+      '../assets/images/DR.CEURACLE-PRO-BALANCE-MORNING-ENZYME-WASH.png',
+      '../assets/images/DR.CEURACLE-PRO-BALANCE-MORNING-ENZYME-WASH-2.png',
+      '../assets/images/DR.CEURACLE-PRO-BALANCE-MORNING-ENZYME-WASH-3.png',
     ],
     ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
     Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
@@ -215,10 +179,8 @@ let allProducts =
     price: "16.75",
     images: [
       '../assets/images/by_wishtrend_1.jpg',
-      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
-      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
-      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
-      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+      '../assets/images/BY-WISHTREND-Acid-Duo-Hibiscus-1.jpg',
+      '../assets/images/BY-WISHTREND-Acid-Duo-Hibiscus-2.jpg',
     ],
     ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
     Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
@@ -1075,10 +1037,8 @@ let allProducts =
     price: 25.48,
     images: [
       '../assets/images/bb-creams/dr._ceuracle_38.jpg',
-      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
-      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
-      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
-      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+      '../assets/images/bb-creams/Dr.Ceuracle-Recovery-BB Balm-1.jpg',
+      '../assets/images/bb-creams/Dr.Ceuracle-Recovery-BB Balm-2.jpg',
     ],
     ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
     Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
@@ -1161,10 +1121,10 @@ let allProducts =
     price: 20.82,
     images: [
       '../assets/images/bb-creams/dr._ceuracle_p_46.jpg',
-      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
-      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
-      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
-      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+      '../assets/images/bb-creams/Dr.Ceuracle-Glow-Fit-Cushion-1.jpg',
+      '../assets/images/bb-creams/Dr.Ceuracle-Glow-Fit-Cushion-2.jpg',
+      '../assets/images/bb-creams/Dr.Ceuracle-Glow-Fit-Cushion-3.jpg',
+      '../assets/images/bb-creams/Dr.Ceuracle-Glow-Fit-Cushion-4.jpg',
     ],
     ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
     Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
@@ -1247,10 +1207,10 @@ let allProducts =
     price: 20.82,
     images: [
       '../assets/images/bb-creams/dr._ceuracle_p_47.jpg',
-      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
-      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
-      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
-      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+      '../assets/images/bb-creams/Dr.Ceuracle-Glow-Fit-Cushion-1.jpg',
+      '../assets/images/bb-creams/Dr.Ceuracle-Glow-Fit-Cushion-2.jpg',
+      '../assets/images/bb-creams/Dr.Ceuracle-Glow-Fit-Cushion-3.jpg',
+      '../assets/images/bb-creams/Dr.Ceuracle-Glow-Fit-Cushion-4.jpg',
     ],
     ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
     Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
@@ -3049,6 +3009,64 @@ let allProducts =
 
 ];
 
+let slidePosition = 1;
+
+function displaySlide(position) {
+  let i;
+  const imageElements = document.getElementsByClassName("my-slides");
+
+  if (position > imageElements.length) {
+    slidePosition = 1
+  }
+
+  if (position < 1) {
+    slidePosition = imageElements.length
+  }
+  for (i = 0; i < imageElements.length; i++) {
+    imageElements[i].style.display = "none";
+  }
+  imageElements[slidePosition - 1].style.display = "block";
+}
+
+function displayNextSlides(deltaPosition) {
+  displaySlide(slidePosition += deltaPosition);
+}
+
+function increaseProductCartCount() {
+  const input = document.getElementsByClassName('quantity')[0];
+  let value = parseInt(input.value, 10);
+  value = isNaN(value) ? 0 : value;
+  value++;
+  input.value = value;
+}
+
+function decreaseProductCartCount() {
+  const input = document.getElementsByClassName('quantity')[0];
+  let value = parseInt(input.value, 10);
+
+  if (value > 1) {
+    value = isNaN(value) ? 0 : value;
+    value--;
+    input.value = value;
+  }
+}
+
+const currencyRates = {
+  EUR: { value: 1, symbol: "€" },
+  USD: { value: 1.22, symbol: "$" },
+  RON: { value: 4.93, symbol: "RON" }
+}
+
+let selectedRate = "EUR";
+const currencySelect = document.getElementById("currencySelect");
+
+currencySelect.addEventListener("change", (event) => {
+  selectedRate = event.target.value;
+  displaySimilarProducts(products);
+  displayCurrentProduct();
+});
+
+
 function getProductId() {
   return window.location.search.replace('?productId=', '');
 }
@@ -3059,6 +3077,15 @@ function getCurrentProduct() {
   const currentProductId = getProductId();
 
   return allProducts.find(product => product.id === currentProductId);
+}
+
+function createProductImagesHtml() {
+  let result = '';
+  const productImages = currentProduct.images;
+  for (let productImage of productImages) {
+    result += '<img class="my-slides" src="' + productImage + '">';
+  }
+  return result;
 }
 
 function displayCurrentProduct() {
@@ -3077,40 +3104,10 @@ function displayCurrentProduct() {
   productDescription.innerHTML = currentProduct.description;
   const sliderImages = document.getElementById("slider-images");
   sliderImages.innerHTML = createProductImagesHtml();
-  displaySlide(slideIndex);
+  displaySlide(slidePosition);
 }
 
 displayCurrentProduct();
-
-function displayNextSlide(n) {
-  displaySlide(slideIndex += n);
-}
-
-function displaySlide(n) {
-  let i;
-  const x = document.getElementsByClassName("my-slides");
-
-  if (n > x.length) {
-    slideIndex = 1
-  }
-
-  if (n < 1) {
-    slideIndex = x.length
-  }
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex - 1].style.display = "block";
-}
-
-function createProductImagesHtml() {
-  let result = '';
-  const productImages = currentProduct.images;
-  for (let productImage of productImages) {
-    result += '<img class="my-slides" src="' + productImage + '">';
-  }
-  return result;
-}
 
 let products = [
   {
@@ -3207,34 +3204,3 @@ function displaySimilarProducts(listOfProducts) {
 }
 
 displaySimilarProducts(products);
-
-function sendToFavorites() {
-  const favlistButton = document.getElementsByClassName("send-to-favorites")[0];
-  const favListIcon = document.getElementsByClassName("heart-icon")[0];
-  favlistButton.addEventListener("click", function () {
-    if (favListIcon.classList.contains("far")) {
-      favListIcon.classList.replace("far", "fas");
-      favListIcon.style.color = "rgb(255, 181, 198)";
-    } else {
-      favListIcon.classList.replace("fas", "far");
-      favListIcon.style.color = "rgb(214, 214, 214)";
-    };
-  });
-}
-
-sendToFavorites();
-
-function addToCartMainProduct() {
-  const addToCartBtn = document.getElementsByClassName("add-to-bag")[0];
-  const cartIcon = document.getElementsByClassName("cart-icon")[0];
-  addToCartBtn.addEventListener("click", function () {
-    if (cartIcon.classList.contains("fa-cart-arrow-down")) {
-      cartIcon.classList.replace("fa-cart-arrow-down", "fa-cart-plus");
-    }
-    else {
-      cartIcon.classList.replace("fa-cart-plus", "fa-cart-arrow-down");
-    }
-  });
-};
-
-addToCartMainProduct();

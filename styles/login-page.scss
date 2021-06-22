@@ -70,6 +70,7 @@ body {
       color: rgb(3, 91, 105);
       font-weight: bold;
       position: relative;
+      outline: none;
       &:hover {
         box-shadow: 0px 0px 3px 1px;
         cursor: pointer;
@@ -80,7 +81,7 @@ body {
       height: 40vh;
     }
   }
-  
+
   #sign-in-container {
     width: 50%;
     background-color: rgb(228, 250, 250);

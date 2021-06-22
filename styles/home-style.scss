@@ -1,7 +1,6 @@
-
-@import 'product-container-styles.scss';
-@import 'colors.scss';
-@import 'navbar.scss';
+@import "product-container-styles.scss";
+@import "colors.scss";
+@import "navbar.scss";
 
 * {
     box-sizing: border-box;
@@ -99,7 +98,7 @@ body {
         bottom: 0;
         margin: auto auto;
         height: 100%;
-        object-fit: cover;        
+        object-fit: cover;
     }
 
     .navigation-manual {

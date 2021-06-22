@@ -43,7 +43,7 @@ body {
                     overflow: scroll;
                     width: 45%;
                     height: 150px;
-                }                
+                }
             }
 
             .filter-by-product-name-container {
@@ -65,7 +65,7 @@ body {
                 @media screen and (max-width: 600px) {
                     width: 45%;
                     height: 150px;
-                }   
+                }
             }
 
             form {
@@ -132,11 +132,11 @@ body {
             }
             @media screen and (max-width: 600px) {
                 width: 100%;
-            }   
+            }
         }
         @media screen and (max-width: 600px) {
             flex-direction: column;
-        }   
+        }
     }
     @media screen and (max-width: 768px) {
         font-size: 14px;

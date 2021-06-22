@@ -93,7 +93,6 @@ body {
           }
         }
 
-
         .details-to-buy-container {
           width: 47%;
 
@@ -397,13 +396,14 @@ body {
       margin-top: 50px;
       font-size: 32px;
       letter-spacing: 0.16px;
+      padding-bottom: 10px;
 
       @media screen and (max-width: 768px) {
         margin-top: 0;
       }
     }
   }
-  
+
   @media screen and (max-width: 768px) {
     font-size: 14px;
   }

@@ -93,6 +93,7 @@ body #for-seller button {
   color: #035b69;
   font-weight: bold;
   position: relative;
+  outline: none;
 }
 
 body #for-seller button:hover {

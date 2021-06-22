@@ -1290,6 +1290,7 @@ body main .similar-products {
   margin-top: 50px;
   font-size: 32px;
   letter-spacing: 0.16px;
+  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 768px) {

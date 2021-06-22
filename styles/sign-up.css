@@ -93,6 +93,7 @@ body #for-seller button {
   color: #035b69;
   font-weight: bold;
   position: relative;
+  outline: none;
 }
 
 body #for-seller button:hover {
@@ -155,7 +156,8 @@ body #sign-up-container form {
   height: 60%;
 }
 
-body #sign-up-container form > :first-child, body #sign-up-container form > :nth-child(3) {
+body #sign-up-container form > :first-child,
+body #sign-up-container form > :nth-child(3) {
   padding-bottom: 32px;
 }
 

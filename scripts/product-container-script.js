@@ -3,7 +3,8 @@ function registerAddToFavoritesEvents(products) {
   for (let i = 0; i < products.length; i++) {
     const favlistButton = document.getElementsByClassName("favButton")[i];
     const favListIcon = document.getElementsByClassName("fav-icon")[i];
-    favlistButton.addEventListener("click", function () {
+    favlistButton.addEventListener("click", function (event) {
+      event.stopPropagation();
       if (favListIcon.classList.contains("far")) {
         favListIcon.classList.replace("far", "fas");
         favListIcon.style.color = "rgb(255, 181, 198)";
@@ -20,7 +21,8 @@ function registerAddToCartEvents(products) {
     const wishListIcon = document.getElementsByClassName("cart")[i];
     const wishListButton = document.getElementsByClassName("wish-list-btn")[i];
 
-    wishListButton.addEventListener("click", function () {
+    wishListButton.addEventListener("click", function (event) {
+      event.stopPropagation();
 
       if (wishListIcon.classList.contains("fa-shopping-cart")) {
         wishListIcon.classList.replace("fa-shopping-cart", "fa-cart-plus");
@@ -36,7 +38,7 @@ function registerAddToCartEvents(products) {
 
 function registerNavigateToProductEvent(products) {
   for (let i = 0; i < products.length; i++) {
-    const productElement = document.getElementsByClassName("name")[i];
+    const productElement = document.getElementsByClassName("product-container")[i];
     const productId = products[i].id;
     productElement.addEventListener("click", function (event) {
       event.preventDefault();
