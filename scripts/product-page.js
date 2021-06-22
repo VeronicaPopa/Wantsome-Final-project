@@ -3069,8 +3069,8 @@ function displayCurrentProduct() {
   productPrice.textContent = (currentProduct.price * rateInfo.value).toFixed(2) + " " + rateInfo.symbol;
   const brand = document.getElementsByClassName("brand-manufactures")[0];
   brand.textContent = currentProduct.brand;
-  const volume = document.getElementsByClassName("volume")[0];
-  volume.textContent = currentProduct.details;
+  const productDetails = document.getElementsByClassName("product-details")[0];
+  productDetails.textContent = currentProduct.details;
   const ingredients = document.getElementsByClassName("ingredients")[0];
   ingredients.textContent = currentProduct.ingredients;
   const productDescription = document.getElementsByClassName("product-description")[0];
@@ -3109,19 +3109,20 @@ function createProductImagesHtml() {
   for (let productImage of productImages) {
     result += '<img class="my-slides" src="' + productImage + '">';
   }
-
   return result;
 }
 
 let products = [
   {
+    id: "17",
     image: "../assets/images/bb-creams/dr._jart.jpg",
     brand: "Dr.Jart+",
     productName: "Premium ВВ Beauty Balm",
     details: "SPF-45 Pa+++ 40 ml",
-    price: "41.65"
+    price: 41.65,
   },
   {
+    id: "18",
     image: "../assets/images/bb-creams/holika_holika_4.jpg",
     brand: "Holika Holika",
     productName: "Shimmering Petit BB Cream",
@@ -3129,6 +3130,7 @@ let products = [
     price: "6.12"
   },
   {
+    id: "19",
     image: "../assets/images/bb-creams/holika_holika_5jpg.jpeg",
     brand: "Holika Holika",
     productName: "Bouncing Petit BB Cream",
@@ -3136,6 +3138,7 @@ let products = [
     price: "6.12"
   },
   {
+    id: "20",
     image: "../assets/images/bb-creams/lapalette_17.jpg",
     brand: "Lapalette",
     productName: "Silky Tension Cover Pact Original White Horse",
