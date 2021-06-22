@@ -2,7 +2,7 @@
 const emailInput = document.getElementById("email");
 const eyeImage = document.getElementById("eye-image");
 const passwordContainer = document.getElementsByClassName("password-container")[0];
-const signInBtn = document.getElementsByClassName("sign-in-btn")[0];
+const signUpBtn = document.getElementsByClassName("sign-up-btn")[0];
 const passwordInput = document.getElementById("password");
 let isValidEmail;
 let isValidPass;
@@ -111,14 +111,30 @@ passwordInput.addEventListener("keyup", addPasswordValidResult);
 
 function updateSubmitStatus() {
   if ((isValidEmail) && (isValidPass)) {
-    signInBtn.removeAttribute("disabled");
+    signUpBtn.removeAttribute("disabled");
   } else {
-    signInBtn.setAttribute("disabled", true);
+    signUpBtn.setAttribute("disabled", true);
   }
 }
 
 
-signInBtn.addEventListener("click", function (event) {
+signUpBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  window.location.href = '../pages/home-page.html';
+  const emailValue = document.getElementById("email").value;
+  const passwordValue = document.getElementById("password").value;
+  const newUser = {
+    email: emailValue,
+    password: passwordValue
+  };
+  let listOfUsers = JSON.parse(localStorage.getItem('listOfUsers'));
+
+  if (!listOfUsers) {
+    listOfUsers = [];
+  }
+
+  listOfUsers.push(newUser);
+  localStorage.setItem('listOfUsers', JSON.stringify(listOfUsers));
+
+  window.location.href = '../pages/login-page.html';
 })
+

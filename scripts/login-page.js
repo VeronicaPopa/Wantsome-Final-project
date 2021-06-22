@@ -1,30 +1,3 @@
-const listOfEmails = [
-  {
-    email: "anapopescu@yahoo.com",
-    password: "anapopescu123"
-  },
-  {
-    email: "vladmoraru@yahoo.com",
-    password: "vladmoraru123"
-  },
-  {
-    email: "mirela_frunza@yahoo.com",
-    password: "mirelafrunza123"
-  },
-  {
-    email: "dan_botnaru@yahoo.com",
-    password: "danbotnaru123"
-  },
-  {
-    email: "razvan-nuca@yahoo.com",
-    password: "razvannuca123"
-  },
-  {
-    email: "stefan_bradu@yahoo.com",
-    password: "stefanbradu123"
-  }
-]
-
 const emailInput = document.getElementById("email");
 const eyeImage = document.getElementById("eye-image");
 const passwordContainer = document.getElementsByClassName("password-container")[0];
@@ -130,8 +103,10 @@ passwordInput.addEventListener("keyup", addPasswordValidResult);
 function accountValidation() {
   const email = emailInput.value;
   const passwordValue = passwordInput.value;
-  for (let i = 0; i < listOfEmails.length; i++) {
-    if ((email === listOfEmails[i].email) && (passwordValue === listOfEmails[i].password)) {
+  const listOfUsers = JSON.parse(localStorage.getItem('listOfUsers'));
+
+  for (let i = 0; i < listOfUsers.length; i++) {
+    if ((email === listOfUsers[i].email) && (passwordValue === listOfUsers[i].password)) {
       return true;
     }
   }
