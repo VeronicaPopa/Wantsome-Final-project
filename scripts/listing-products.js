@@ -8,6 +8,7 @@ let selectedRate = "EUR";
 
 let products = [
   {
+    id: "13",
     image: "../assets/images/bb-creams/dr._ceuracle_38.jpg",
     brand: "Dr.Ceuracle",
     productName: "Recovery BB Balm",
@@ -15,6 +16,7 @@ let products = [
     price: 25.48
   },
   {
+    id: "14",
     image: "../assets/images/bb-creams/dr._ceuracle_p_46.jpg",
     brand: "Dr.Ceuracle",
     productName: "Glow Fit Cushion",
@@ -22,6 +24,7 @@ let products = [
     price: 20.82
   },
   {
+    id: "15",
     image: "../assets/images/bb-creams/dr._ceuracle_p_47.jpg",
     brand: "Dr.Ceuracle",
     productName: "Glow Fit Cushion",
@@ -29,6 +32,7 @@ let products = [
     price: 20.82
   },
   {
+    id: "16",
     image: "../assets/images/bb-creams/dr._g_18.jpg",
     brand: "Dr.G",
     productName: "Radiance Dual Essence BB",
@@ -36,6 +40,7 @@ let products = [
     price: 18.62
   },
   {
+    id: "17",
     image: "../assets/images/bb-creams/dr._jart.jpg",
     brand: "Dr.Jart+",
     productName: "Premium ВВ Beauty Balm",
@@ -43,6 +48,7 @@ let products = [
     price: 41.65
   },
   {
+    id: "18",
     image: "../assets/images/bb-creams/holika_holika_4.jpg",
     brand: "Holika Holika",
     productName: "Shimmering Petit BB Cream",
@@ -50,6 +56,7 @@ let products = [
     price: 6.12
   },
   {
+    id: "19",
     image: "../assets/images/bb-creams/holika_holika_5jpg.jpeg",
     brand: "Holika Holika",
     productName: "Bouncing Petit BB Cream",
@@ -57,6 +64,7 @@ let products = [
     price: 6.12
   },
   {
+    id: "20",
     image: "../assets/images/bb-creams/lapalette_17.jpg",
     brand: "Lapalette",
     productName: "Silky Tension Cover Pact Original White Horse",
@@ -64,6 +72,7 @@ let products = [
     price: 17.59
   },
   {
+    id: "21",
     image: "../assets/images/bb-creams/lapalette_161.jpg",
     brand: "Lapalette",
     productName: "Silky Tension Cover Pact Original White Horse",
@@ -71,6 +80,7 @@ let products = [
     price: 17.59
   },
   {
+    id: "22",
     image: "../assets/images/bb-creams/missha_9.jpg",
     brand: "Missha",
     productName: "Signature Real Complete BB Cream",
@@ -78,6 +88,7 @@ let products = [
     price: 23.52
   },
   {
+    id: "23",
     image: "../assets/images/bb-creams/missha_10.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
@@ -85,6 +96,7 @@ let products = [
     price: 8.82
   },
   {
+    id: "24",
     image: "../assets/images/bb-creams/missha_11.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
@@ -92,20 +104,23 @@ let products = [
     price: 14.94
   },
   {
+    id: "25",
     image: "../assets/images/bb-creams/missha_12.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
-    details: "SPF 42 PA+++ № 29 50 ml",
+    details: "SPF 42 PA+++ № 28 50 ml",
     price: 14.94
   },
   {
+    id: "26",
     image: "../assets/images/bb-creams/missha_11.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
-    details: "SPF 42 PA+++ № 25 50 ml",
+    details: "SPF 42 PA+++ № 23 50 ml",
     price: 14.94
   },
   {
+    id: "27",
     image: "../assets/images/bb-creams/missha_15.jpg",
     brand: "Missha",
     productName: "Perfect Cover BB Cream",
@@ -113,6 +128,7 @@ let products = [
     price: 14.94
   },
   {
+    id: "28",
     image: "../assets/images/bb-creams/missha_38.jpg",
     brand: "Missha",
     productName: "Cho Bo Yang BB Cream",
@@ -120,6 +136,7 @@ let products = [
     price: 27.93
   },
   {
+    id: "1",
     image: "../assets/images/bb-creams/missha_39.jpg",
     brand: "Missha",
     productName: "Signature Wrinkle Fill-Up BB Cream",
@@ -127,6 +144,7 @@ let products = [
     price: 27.68
   },
   {
+    id: "29",
     image: "../assets/images/bb-creams/missha_91.jpg",
     brand: "Missha",
     productName: "Signature Real Complete BB Cream",
@@ -134,6 +152,7 @@ let products = [
     price: 23.52
   },
   {
+    id: "30",
     image: "../assets/images/bb-creams/mizon_5.jpg",
     brand: "Mizon",
     productName: "Snail Repair Intensive BB Cream",
@@ -141,13 +160,15 @@ let products = [
     price: 9.06
   },
   {
+    id: "31",
     image: "../assets/images/bb-creams/missha_382jpg.jpeg",
     brand: "Missha",
     productName: "Cho Bo Yang BB Cream",
-    details: "Spf30/pa++ № 21 50 ml",
+    details: "Spf30/pa++ № 25 50 ml",
     price: 27.93
   },
   {
+    id: "32",
     image: "../assets/images/bb-creams/mizon_28.jpg",
     brand: "Mizon",
     productName: "Watermax Moisture BB Cream",
@@ -155,6 +176,7 @@ let products = [
     price: 11.27
   },
   {
+    id: "33",
     image: "../assets/images/bb-creams/mizon_47.jpg",
     brand: "Mizon",
     productName: "Snail Repair Intensive BB Cream",
@@ -162,6 +184,7 @@ let products = [
     price: 5.39
   },
   {
+    id: "34",
     image: "../assets/images/bb-creams/mizon_48.jpg",
     brand: "Mizon",
     productName: "Snail Repair Intensive BB Cream",
@@ -169,6 +192,7 @@ let products = [
     price: 5.39
   },
   {
+    id: "35",
     image: "../assets/images/bb-creams/purito_1.jpg",
     brand: "Purito",
     productName: "Cica Clearing BB cream",
@@ -177,7 +201,7 @@ let products = [
   }
 ];
 
-function displayProducts(listOfProducts) {
+function displaySimilarProducts(listOfProducts) {
   productResult = listOfProducts;
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
@@ -232,6 +256,10 @@ function displayProducts(listOfProducts) {
     favListIcon.classList.add("fa-heart");
     favListButton.appendChild(favListIcon);
   }
+
+  registerNavigateToProductEvent(listOfProducts);
+  registerAddToFavoritesEvents(listOfProducts);
+  registerAddToCartEvents(listOfProducts);
 }
 
 function generateFilter(selectId, objectKey) {
@@ -263,7 +291,7 @@ const filterOptions = document.querySelectorAll("[type = checkbox]");
 let filterBrandCriterias = [];
 let filterProductNameCriterias = [];
 let productResult = [];
-displayProducts(products.slice(0, 12));
+displaySimilarProducts(products.slice(0, 12));
 registerChangeEvent();
 
 function registerChangeEvent() {
@@ -272,7 +300,7 @@ function registerChangeEvent() {
       getSelectedFilter();
       const filteredProductsByBrand = filterProducts(filterBrandCriterias, products);
       const filteredProductsByProductName = filterProducts(filterProductNameCriterias, filteredProductsByBrand);
-      displayProducts(filteredProductsByProductName);
+      displaySimilarProducts(filteredProductsByProductName);
     })
   }
 }
@@ -340,7 +368,7 @@ function sortBy(field, direction) {
     }
     return 0;
   });
-  displayProducts(productResult);
+  displaySimilarProducts(productResult);
 }
 
 sortSelect.addEventListener("change", (event) => {
@@ -381,7 +409,7 @@ searchBar.addEventListener("keyup", (e) => {
       product.details.toLowerCase().includes(searchString);
 
   })
-  displayProducts(filteredCharacters);
+  displaySimilarProducts(filteredCharacters);
 })
 
 const perPageSelect = document.getElementById("per-page");
@@ -395,11 +423,11 @@ function perPageShow(event) {
   switch (value) {
     case "12": {
       // console.log(productResult.slice(0, 8));
-      displayProducts(products.slice(0, 12));
+      displaySimilarProducts(products.slice(0, 12));
       break;
     }
     case "24": {
-      displayProducts(products.slice(0, 24));
+      displaySimilarProducts(products.slice(0, 24));
       break;
     }
   }
@@ -409,48 +437,5 @@ const currencySelect = document.getElementById("currencySelect");
 
 currencySelect.addEventListener("change", (event) => {
   selectedRate = event.target.value;
-  displayProducts(productResult);
+  displaySimilarProducts(productResult);
 });
-
-(function addToFavorites() {
-  for (let i = 0; i < productResult.length; i++) {
-    const favlistButton = document.getElementsByClassName("favButton")[i];
-    const favListIcon = document.getElementsByClassName("fav-icon")[i];
-    favlistButton.addEventListener("click", function () {
-      if (favListIcon.classList.contains("far")) {
-        favListIcon.classList.replace("far", "fas");
-        favListIcon.style.color = "rgb(255, 181, 198)";
-      } else {
-        favListIcon.classList.replace("fas", "far");
-        favListIcon.style.color = "rgb(214, 214, 214)";
-      }
-    });
-  };
-})();
-
-(function addToCart() {
-  for (let i = 0; i < productResult.length; i++) {
-    const wishListIcon = document.getElementsByClassName("cart")[i];
-    const wishListButton = document.getElementsByClassName("wish-list-btn")[i];
-    wishListButton.addEventListener("click", function () {
-      if (wishListIcon.classList.contains("fa-shopping-cart")) {
-        wishListIcon.classList.replace("fa-shopping-cart", "fa-cart-plus");
-        wishListIcon.style.color = "rgb(125, 210, 211)";
-      }
-      else {
-        wishListIcon.classList.replace("fa-cart-plus", "fa-shopping-cart");
-        wishListIcon.style.color = "rgb(255, 181, 198)";
-      }
-    });
-  };
-})();
-
-(function redirectToProductPage() {
-  for (let i = 0; i < productResult.length; i++) {
-    const productName = document.getElementsByClassName("name")[i];
-    productName.addEventListener("click", function (event) {
-      event.preventDefault();
-      window.location.href = '../pages/product-page.html';
-    })
-  }
-})();

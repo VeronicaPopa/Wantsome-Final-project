@@ -1,4 +1,3 @@
-
 const currencyRates = {
   EUR: { value: 1, symbol: "€" },
   USD: { value: 1.22, symbol: "$" },
@@ -9,7 +8,7 @@ const currencySelect = document.getElementById("currencySelect");
 
 currencySelect.addEventListener("change", (event) => {
   selectedRate = event.target.value;
-  displayProducts(products);
+  displaySimilarProducts(products);
 });
 
 let products = [
@@ -27,7 +26,7 @@ let products = [
     brand: "Dr.Ceuracle",
     productName: "PRO Balance Morning ENZYME Wash",
     details: "50 g",
-    price: "10.90",
+    price: 10.90,
   },
   {
     id: "3",
@@ -110,10 +109,18 @@ let products = [
     productName: "Blue Chamomile Cream",
     details: "300 ml",
     price: "11.58"
-  }
-]
+  },
+  {
+    id: "13",
+    image: "../assets/images/bb-creams/dr._ceuracle_38.jpg",
+    brand: "Dr.Ceuracle",
+    productName: "Recovery BB Balm",
+    details: "SPF 28 PA ++ 45 ml",
+    price: 25.48
+  },
+];
 
-function displayProducts(listOfProducts) {
+function displaySimilarProducts(listOfProducts) {
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
 
@@ -169,7 +176,11 @@ function displayProducts(listOfProducts) {
 
   }
 }
-displayProducts(products);
+displaySimilarProducts(products);
+
+registerNavigateToProductEvent(products);
+registerAddToFavoritesEvents(products);
+registerAddToCartEvents(products);
 
 // Search Bar function
 const searchBar = document.getElementById("search-bar");
@@ -183,7 +194,7 @@ searchBar.addEventListener("keyup", (e) => {
       product.details.toLowerCase().includes(searchString);
     ;
   })
-  displayProducts(filteredCharacters);
+  displaySimilarProducts(filteredCharacters);
 })
 
 

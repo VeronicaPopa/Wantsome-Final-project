@@ -1,5 +1,5 @@
 
-(function addToFavorites() {
+function registerAddToFavoritesEvents(products) {
   for (let i = 0; i < products.length; i++) {
     const favlistButton = document.getElementsByClassName("favButton")[i];
     const favListIcon = document.getElementsByClassName("fav-icon")[i];
@@ -13,9 +13,9 @@
       }
     });
   };
-})();
+};
 
-(function addToCart() {
+function registerAddToCartEvents(products) {
   for (let i = 0; i < products.length; i++) {
     const wishListIcon = document.getElementsByClassName("cart")[i];
     const wishListButton = document.getElementsByClassName("wish-list-btn")[i];
@@ -32,14 +32,15 @@
       }
     });
   };
-})();
+};
 
-(function redirectToProductPage() {
+function registerNavigateToProductEvent(products) {
   for (let i = 0; i < products.length; i++) {
     const productElement = document.getElementsByClassName("name")[i];
+    const productId = products[i].id;
     productElement.addEventListener("click", function (event) {
       event.preventDefault();
-      window.location.href = '../pages/product-page.html';
+      window.location.href = '../pages/product-page.html?productId=' + productId;
     })
   }
-})();
+};

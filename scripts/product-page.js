@@ -29,95 +29,9 @@ const currencySelect = document.getElementById("currencySelect");
 
 currencySelect.addEventListener("change", (event) => {
   selectedRate = event.target.value;
-  displayProducts(products);
+  displaySimilarProducts(products);
   displayCurrentProduct();
 });
-
-const currentProduct = {
-  brand: "Missha",
-  productName: "Signature Wrinkle Fill-Up BB Cream",
-  details: "44 ml",
-  price: 27.68,
-  images: [
-    '../assets/images/product-images/missha_39-_-1620203584.jpg',
-    '../assets/images/product-images/135._p_n_g-_-1619613485.png',
-    '../assets/images/product-images/137._p_n_g-_-1619613506.png',
-    '../assets/images/product-images/138._p_n_g-_-1619613523.png',
-    '../assets/images/product-images/136._p_n_g-_-1619613496.png'
-  ],
-  ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
-  Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
-  Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
-  Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
-  Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
-  Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
-  Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
-  Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
-  (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
-  Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
-  Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
-  Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
-  Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
-  Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
-  Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
-  Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
-  Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
-  Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
-  Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
-  Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
-  Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
-  sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
-  EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
-  description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
-  effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
-  and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
-  care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
-  prevents dehydration and slows down the aging process of the skin. <br>
-
-  The product consists of 2 products: <br> <br>
-  BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
-  smoothes the skin's relief and hides imperfections.<br>
-  Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
-  effectively rejuvenate. <br>
-
-  The peculiarity of the foundation lies in its consistency, when the product is distributed over the
-  surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
-  product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
-  moisture, regulates the secretion of the sebaceous glands and mattifies.
-  The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
-  The main active ingredients: <br>
-  Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
-  been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
-  movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
-  Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
-  ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
-  maintains optimal moisture levels in the epidermal cells.<br>
-  Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
-  tightens pores, and protects against free radicals.
-  Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
-  smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
-  Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
-  Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
-  synthesis.<br>
-  Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
-  smooth out small wrinkles.<br>
-  Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
-  vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
-  condition.
-  Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
-  firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
-  retains moisture in the deep layers of the skin.<br>
-
-  Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
-
-  BB-cream is presented in 2 shades:<br><br>
-  21 tone - light beige;<br>
-  23 tone - natural beige;<br>
-
-  How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
-  mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
-  sponge or brush.`
-};
 
 let allProducts =
 [
@@ -1152,10 +1066,2000 @@ let allProducts =
     How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
     mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
     sponge or brush.`
+  },
+  {
+    id: "13",
+    brand: "Dr.Ceuracle",
+    productName: "Recovery BB Balm",
+    details: "SPF 28 PA ++ 45 ml",
+    price: 25.48,
+    images: [
+      '../assets/images/bb-creams/dr._ceuracle_38.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "14",
+    brand: "Dr.Ceuracle",
+    productName: "Glow Fit Cushion",
+    details: "SPF50+ PA+++ 01 Pale Beige 13 g",
+    price: 20.82,
+    images: [
+      '../assets/images/bb-creams/dr._ceuracle_p_46.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "15",
+    brand: "Dr.Ceuracle",
+    productName: "Glow Fit Cushion",
+    details: "SPF50+ PA+++ 02 Natural Beige 13 g",
+    price: 20.82,
+    images: [
+      '../assets/images/bb-creams/dr._ceuracle_p_47.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "16",
+    brand: "Dr.G",
+    productName: "Radiance Dual Essence BB",
+    details: "SPF50+ PA+++ 40g",
+    price: 18.62,
+    images: [
+      '../assets/images/bb-creams/dr._g_18.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "17",
+    brand: "Dr.Jart+",
+    productName: "Premium ВВ Beauty Balm",
+    details: "SPF-45 Pa+++ 40 ml",
+    price: 41.65,
+    images: [
+      '../assets/images/bb-creams/dr._jart.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "18",
+    brand: "Holika Holika",
+    productName: "Shimmering Petit BB Cream",
+    details: "30 ml",
+    price: 6.12,
+    images: [
+      '../assets/images/bb-creams/holika_holika_4.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "19",
+    brand: "Holika Holika",
+    productName: "Bouncing Petit BB Cream",
+    details: "30 ml",
+    price: 6.12,
+    images: [
+      '../assets/images/bb-creams/holika_holika_5jpg.jpeg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "20",
+    brand: "Lapalette",
+    productName: "Silky Tension Cover Pact Original White Horse",
+    details: "SPF50+PA+++ №21, 12g* 2",
+    price: 17.59,
+    images: [
+      '../assets/images/bb-creams/lapalette_17.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "21",
+    brand: "Lapalette",
+    productName: "Silky Tension Cover Pact Original White Horse",
+    details: "SPF50+PA+++ №23, 12g* 2",
+    price: 17.59,
+    images: [
+      '../assets/images/bb-creams/lapalette_161.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "22",
+    brand: "Missha",
+    productName: "Signature Real Complete BB Cream",
+    details: "SPF 25 PA+++ № 21 (Light Pink Beige) 45gr",
+    price: 23.52,
+    images: [
+      '../assets/images/bb-creams/missha_9.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "23",
+    brand: "Missha",
+    productName: "Perfect Cover BB Cream",
+    details: "SPF 42 PA+++ № 25 20 ml",
+    price: 8.82,
+    images: [
+      '../assets/images/bb-creams/missha_10.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "24",
+    brand: "Missha",
+    productName: "Perfect Cover BB Cream",
+    details: "SPF 42 PA+++ № 29 50 ml",
+    price: 14.94,
+    images: [
+      '../assets/images/bb-creams/missha_11.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "25",
+    brand: "Missha",
+    productName: "Perfect Cover BB Cream",
+    details: "SPF 42 PA+++ № 28 50 ml",
+    price: 14.94,
+    images: [
+      '../assets/images/bb-creams/missha_12.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "26",
+    brand: "Missha",
+    productName: "Perfect Cover BB Cream",
+    details: "SPF 42 PA+++ № 23 50 ml",
+    price: 14.94,
+    images: [
+      '../assets/images/bb-creams/missha_11.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "27",
+    brand: "Missha",
+    productName: "Perfect Cover BB Cream",
+    details: "SPF 42 PA+++ № 21 (Light Beige) 50 ml",
+    price: 14.94,
+    images: [
+      '../assets/images/bb-creams/missha_15.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "28",
+    brand: "Missha",
+    productName: "Cho Bo Yang BB Cream",
+    details: "Spf30/pa++ № 21 50 ml",
+    price: 27.93,
+    images: [
+      '../assets/images/bb-creams/missha_38.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "29",
+    brand: "Missha",
+    productName: "Signature Real Complete BB Cream",
+    details: " SPF25/PA++ 45g N23",
+    price: 23.52,
+    images: [
+      '../assets/images/bb-creams/missha_91.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "30",
+    brand: "Mizon",
+    productName: "Snail Repair Intensive BB Cream",
+    details: "SPF50+ РА+++ №31 50ml",
+    price: 9.06,
+    images: [
+      '../assets/images/bb-creams/mizon_5.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "31",
+    brand: "Missha",
+    productName: "Cho Bo Yang BB Cream",
+    details: "Spf30/pa++ № 25 50 ml",
+    price: 27.93,
+    images: [
+      '../assets/images/bb-creams/missha_382jpg.jpeg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "32",
+    brand: "Mizon",
+    productName: "Watermax Moisture BB Cream",
+    details: "SPF 30 PA+++ 50 ml",
+    price: 11.27,
+    images: [
+      '../assets/images/bb-creams/mizon_28.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "33",
+    brand: "Mizon",
+    productName: "Snail Repair Intensive BB Cream",
+    details: "SPF50+ РА+++ №21, 20ml",
+    price: 5.39,
+    images: [
+      '../assets/images/bb-creams/mizon_47.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "34",
+    brand: "Mizon",
+    productName: "Snail Repair Intensive BB Cream",
+    details: "SPF50+ РА+++ №23, 20ml",
+    price: 5.39,
+    images: [
+      '../assets/images/bb-creams/mizon_48.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
+  },
+  {
+    id: "35",
+    brand: "Purito",
+    productName: "Cica Clearing BB cream",
+    details: "№23 30ml",
+    price: 12.98,
+    images: [
+      '../assets/images/bb-creams/purito_1.jpg',
+      '../assets/images/product-images/135._p_n_g-_-1619613485.png',
+      '../assets/images/product-images/137._p_n_g-_-1619613506.png',
+      '../assets/images/product-images/138._p_n_g-_-1619613523.png',
+      '../assets/images/product-images/136._p_n_g-_-1619613496.png'
+    ],
+    ingredients: `Water, Cyclopentasiloxane, Titanium Dioxide, Dimethicone, Phenyl Trimethicone, Ethylhexyl
+    Methoxycinnamate, Cyclohexasiloxane, Dimethicone/Vinyl Dimethicone Crosspolymer, Cyclomethicone, Propylene
+    Glycol, PEG-10 Dimethicone, Zinc Oxide, Dicaprylyl Carbonate, Methyl Methacrylate Crosspolymer,
+    Niacinamide, Glycerin, Methylpropanediol, Sodium Chloride, Disteardimonium Hectorite, Sorbitan
+    Sesquioleate, Dimethicone Crosspolymer, Phenoxyethanol, Cetyl PEG/PPG-10/1 Dimethicone, Iron Oxides,
+    Aluminum Hydroxide, Glyceryl Behenate, Polyglyceryl-6 Octastearate, Stearic Acid, Iron Oxides, Tribehenin,
+    Iron Oxides, Ozokerite, Fragrance(Parfum), Triethoxycaprylylsilane, Ethylhexylglycerin, Caprylic/Capric
+    Triglyceride, Disodium EDTA, Adenosine, Prunus Amygdalus Dulcis (Sweet Almond) Oil, Simmondsia Chinensis
+    (Jojoba) Seed Oil, Butylene Glycol, Tocopheryl Acetate, Citrus Aurantium Dulcis (Orange) Peel Oil,
+    Lonicera Japonica (Honeysuckle) Flower Extract, Hydrolyzed Collagen, Chrysanthellum Indicum Extract,
+    Nelumbo Nucifera Flower Extract, Carthamus Tinctorius (Safflower) Flower Extract, Palmitoyl Isoleucine,
+    Hydrogenated Lecithin, Ethylhexyl Palmitate, Ceramide 3, Brassica Oleracea Italica (Broccoli) Extract,
+    Brassica Rapa (Turnip) Leaf Extract, Medicago Sativa (Alfalfa) Extract, 1,2-Hexanediol, Cassia
+    Angustifolia Seed Polysaccharide, Cholesterol, Lecithin, Brassica Campestris (Rapeseed) Extract, Thymus
+    Quinquecostatus Extract, Retinol, Linoleic Acid, Tocopherol, Caprylyl Glycol, Macadamia Ternifolia Seed
+    Oil, Squalane, Oleic Acid, Portulaca Oleracea Extract, Dipeptide Diaminobutyroyl Benzylamide Diacetate,
+    Brassica Campestris (Rapeseed) Sterols, Tripeptide-10 Citrulline, Carbomer, Silica Dimethyl Silylate, PVP,
+    Rosa Multiflora Fruit Extract, Phalaenopsis Amabilis Extract, Dendrobium Phalaenopsis Flower Extract,
+    Camellia Japonica Flower Extract, Lilium Candidum Bulb Extract, Impatiens Balsamina Flower Extract,
+    Pelargonium Graveolens Extract, Calendula Officinalis Flower Extract, Hibiscus Rosa-Sinensis Flower/Leaf
+    Extract, Tropaeolum Majus Flower/Leaf/Stem Extract, Sodium Hyaluronate, Hexylene Glycol, sh-Octapeptide-4,
+    sh-Decapeptide-7, sh-Pentapeptide-19, sh-Oligopeptide-9, Triethanolamine, Fullerenes, Carbomer, Disodium
+    EDTA, Phenoxyethanol, Fragrance, Iron Oxides ( Cl 77492, Cl 77491, Cl 77499)`,
+    description: `<strong>Missha Signature Wrinkle Fill-Up BB Cream SPF37 PA ++ </strong>
+    effectively conceals skin imperfections, evens out the relief and fills in wrinkles for flawless coverage
+    and a healthy glow. An innovative foundation that combines BB cream and a rejuvenating serum for skin
+    care. Such a component as fullerene intensively moisturizes and helps to retain moisture in skin cells,
+    prevents dehydration and slows down the aging process of the skin. <br>
+  
+    The product consists of 2 products: <br> <br>
+    BB-cream (beige) - a special "Line Smoothing" complex effectively fills the depth of wrinkles and pores,
+    smoothes the skin's relief and hides imperfections.<br>
+    Essence (white) - contains the snake peptide Syn-Ake and neuropeptides that have the effect of Botox and
+    effectively rejuvenate. <br>
+  
+    The peculiarity of the foundation lies in its consistency, when the product is distributed over the
+    surface of the skin, it resembles a moisturizer, but the finish remains matte and velvety. Thus, the
+    product perfectly copes with dryness and flaking, fills the skin cells with the necessary amount of
+    moisture, regulates the secretion of the sebaceous glands and mattifies.
+    The 2in1 product has a regenerating, nourishing, masking and protective effect.<br>
+    The main active ingredients: <br>
+    Syn-Ake snake peptide is a synthetic substance that mimics the functions of snake venom, which has long
+    been known as an amazing anti-aging skincare agent. It relaxes the facial muscles, which can reduce facial
+    movement and prevent the appearance of wrinkles. Safe replacement for Botox.<br>
+    Fullerene helps prevent aging processes, smoothes existing wrinkles and prevents the appearance of new
+    ones, whitens pigmentation and has an anti-inflammatory effect. Effectively moisturizes the skin and
+    maintains optimal moisture levels in the epidermal cells.<br>
+    Niacinamide accelerates the process of cell renewal, reduces the number of wrinkles, moisturizes and
+    tightens pores, and protects against free radicals.
+    Adenosine is one of the most commonly used ingredients in the fight against age-related changes. Tightens,
+    smoothes wrinkles, speeds up metabolism and prevents age-related changes.<br>
+    Sweet almond oil has antimicrobial and antioxidant effect, eliminates flaking, dryness and irritation.
+    Promotes smoothing of small wrinkles, smoothing the skin microrelief, improving turgor, enhancing collagen
+    synthesis.<br>
+    Retinol has a pronounced antioxidant potential, softens the skin, increases its elasticity, and helps to
+    smooth out small wrinkles.<br>
+    Jojoba oil penetrates deep into the skin, moisturizes and nourishes. Due to the high concentration of
+    vitamin E, it is an excellent antioxidant - it regenerates, relieves inflammation, and normalizes the skin
+    condition.
+    Hydrolyzed collagen improves the general condition of the skin: it smoothes and evens it out, makes it
+    firm and elastic, removes fine wrinkles and refreshes it. It has a wound healing and soothing effect,
+    retains moisture in the deep layers of the skin.<br>
+  
+    Cosmetics with peptides are not recommended for use during pregnancy and lactation.<br>
+  
+    BB-cream is presented in 2 shades:<br><br>
+    21 tone - light beige;<br>
+    23 tone - natural beige;<br>
+  
+    How to use: Squeeze out the required amount of the product (usually one press on the dispenser is enough),
+    mix the essence filler with the foundation. Spread the BB Cream evenly over the skin with your fingers,
+    sponge or brush.`
 
   }
-  
-]
+
+];
+
+function getProductId() {
+  return window.location.search.replace('?productId=', '');
+}
+
+let currentProduct = getCurrentProduct();
+
+function getCurrentProduct() {
+  const currentProductId = getProductId();
+
+  return allProducts.find(product => product.id === currentProductId);
+}
 
 function displayCurrentProduct() {
   const currentProductName = document.getElementsByClassName("product-name")[0];
@@ -1211,13 +3115,6 @@ function createProductImagesHtml() {
 
 let products = [
   {
-    image: "../assets/images/bb-creams/dr._ceuracle_38.jpg",
-    brand: "Dr.Ceuracle",
-    productName: "Recovery BB Balm",
-    details: "SPF 28 PA ++ 45 ml",
-    price: "25.48"
-  },
-  {
     image: "../assets/images/bb-creams/dr._jart.jpg",
     brand: "Dr.Jart+",
     productName: "Premium ВВ Beauty Balm",
@@ -1247,7 +3144,7 @@ let products = [
   }
 ];
 
-function displayProducts(listOfProducts) {
+function displaySimilarProducts(listOfProducts) {
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
   for (let product of listOfProducts) {
@@ -1301,9 +3198,12 @@ function displayProducts(listOfProducts) {
     favListIcon.classList.add("fa-heart");
     favListButton.appendChild(favListIcon);
   }
+  registerNavigateToProductEvent(listOfProducts);
+  registerAddToFavoritesEvents(listOfProducts);
+  registerAddToCartEvents(listOfProducts);
 }
 
-displayProducts(products);
+displaySimilarProducts(products);
 
 function sendToFavorites() {
   const favlistButton = document.getElementsByClassName("send-to-favorites")[0];
