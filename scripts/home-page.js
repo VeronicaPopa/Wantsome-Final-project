@@ -14,69 +14,81 @@ currencySelect.addEventListener("change", (event) => {
 
 let products = [
   {
+    id: "1",
     image: "../assets/images/bb-creams/missha_39.jpg",
     brand: "Missha",
     productName: "Signature Wrinkle Fill-Up BB Cream",
-    details: "SPF37 PA++ № 21 44 ml",
-    price: 27.68
+    details: "44 ml",
+    price: 27.68,
   },
   {
+    id: "2",
     image: "../assets/images/dr._ceuracle.jpg",
     brand: "Dr.Ceuracle",
     productName: "PRO Balance Morning ENZYME Wash",
     details: "50 g",
-    price: "10.90"
+    price: "10.90",
   },
   {
+    id: "3",
     image: "../assets/images/by_wishtrend_1.jpg",
     brand: "BY WISHTREND",
     productName: "Acid-Duo Hibiscus 63 Cream",
     details: "50 ml",
-    price: "16.75"
+    price: "16.75",
   },
   {
+    id: "4",
     image: "../assets/images/by_wishtrend_2.jpg",
     brand: "By Wishtrend",
     productName: "Teca 1% Barrier Cream",
     details: "",
-    price: "20.69"
+    price: "20.69",
   },
   {
+    id: "5",
     image: "../assets/images/j_msolution.jpg",
     brand: "JMsolution",
     productName: "Glow Luminous Flower Firming Eye Mask",
     details: "",
-    price: "1.72"
+    price: "1.72",
   },
   {
+    id: "6",
     image: "../assets/images/manyo_factory_26.jpg",
     brand: "Manyo Factory",
     productName: "Herb Green Cleansing Oil",
     details: "200 ml",
-    price: "24.59"
+    price: "24.59",
   },
   {
+    id: "7",
     image: "../assets/images/manyo_factory_29.jpg",
     brand: "Manyo Factory",
     productName: "Cleansing Soda Foam",
     details: "150 ml",
-    price: "13.45"
+    price: "13.45",
+
   },
   {
+    id: "8",
     image: "../assets/images/petitfee&_koelf_23.jpg",
     brand: "Petitfée",
     productName: "Hydrogel Angel Wings Gold Neck Pack",
     details: "",
-    price: "1.13"
+    price: "1.13",
   },
   {
+    id: "9",
     image: "../assets/images/pyunkang_yul.jpg",
     brand: "Pyunkang Yul",
     productName: "Moisture Ampoule",
     details: "100 ml",
-    price: "23.90"
+    price: "23.90",
+
   },
   {
+    id: "10",
     image: "../assets/images/so_natural_15.jpg",
     brand: "So Natural",
     productName: "Real Matte Make Up Setting Fixx",
@@ -84,6 +96,7 @@ let products = [
     price: "13.40"
   },
   {
+    id: "11",
     image: "../assets/images/the_oozoo_2.png",
     brand: "The Oozoo",
     productName: "Face In-Shot Mask Nutrient",
@@ -91,6 +104,7 @@ let products = [
     price: "5.47"
   },
   {
+    id: "12",
     image: "../assets/images/village11_factory_9.jpg",
     brand: "Village 11 Factory",
     productName: "Blue Chamomile Cream",

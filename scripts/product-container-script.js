@@ -36,8 +36,8 @@
 
 (function redirectToProductPage() {
   for (let i = 0; i < products.length; i++) {
-    const productName = document.getElementsByClassName("name")[i];
-    productName.addEventListener("click", function (event) {
+    const productElement = document.getElementsByClassName("name")[i];
+    productElement.addEventListener("click", function (event) {
       event.preventDefault();
       window.location.href = '../pages/product-page.html';
     })
