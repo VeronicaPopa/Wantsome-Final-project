@@ -76,6 +76,7 @@ body {
             &:hover {
               opacity: 1;
               transition: all 0.2s ease;
+              color: $details-color;
             }
           }
 
@@ -400,6 +401,94 @@ body {
 
       @media screen and (max-width: 768px) {
         margin-top: 0;
+      }
+    }
+    .products-catalog {
+      display: none;
+
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+    }
+    .carousel {
+      overflow: hidden;
+      position: relative;
+      width: 1000px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 1200px) {
+        width: 880px;
+      }
+      @media screen and (max-width: 992px) {
+        width: 760px;
+      }
+      
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+
+      button {
+        height: 60px;
+        width: 40px;
+        position: absolute;
+        top: calc(50% - 40px);
+        z-index: 999;
+        display: block;
+        background: white;
+        color: gray;
+        border: none;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 24px;
+        opacity: 0.8;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+          opacity: 1;
+          transition: all 0.2s ease;
+          color: $details-color;
+        }
+
+        &:first-of-type {
+          left: 0;
+        }
+
+        &:last-of-type {
+          right: 0;
+        }
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+        transition: transform 0.3s linear;
+
+        li {
+
+          &:not(:first-child) {
+            margin-left: 20px;
+
+            @media screen and (max-width: 992px) {
+              margin-left: 5px;
+            }
+          }
+
+          .product-container {
+            width: 320px;
+            margin: 0px;
+
+            @media screen and (max-width: 1200px) {
+              width: 280px;
+            }
+
+            @media screen and (max-width: 992px) {
+              width: 250px;
+            }
+          }
+        }
       }
     }
   }

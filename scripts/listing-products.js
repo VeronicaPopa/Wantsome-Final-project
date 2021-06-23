@@ -194,10 +194,7 @@ let products = [
 ];
 
 // currency converter
-currencySelect.addEventListener('change', (event) => {
-  selectedRate = event.target.value;
-  displayProducts(productResult);
-});
+registerCurrencyChangeClick(() => displayProducts(productResult));
 
 function displayProducts(listOfProducts) {
   productResult = listOfProducts;
@@ -254,9 +251,8 @@ function displayProducts(listOfProducts) {
     favListIcon.classList.add("fa-heart");
     favListButton.appendChild(favListIcon);
   }
-
   registerNavigateToProductEvent(listOfProducts);
-  registerAddToFavoritesEvents(listOfProducts);
+  registerAddProductsToFavorite(listOfProducts);
   registerAddToCartEvents(listOfProducts);
 }
 

@@ -142,10 +142,7 @@ let products = [
 })();
 
 // currency converter
-currencySelect.addEventListener('change', (event) => {
-  selectedRate = event.target.value;
-  displayProducts(products);
-});
+registerCurrencyChangeClick(() => displayProducts(products));
 
 function displayProducts(listOfProducts) {
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
@@ -199,15 +196,12 @@ function displayProducts(listOfProducts) {
     favListIcon.classList.add("far");
     favListIcon.classList.add("fa-heart");
     favListButton.appendChild(favListIcon);
-
-
   }
+  registerNavigateToProductEvent(products);
+  registerAddProductsToFavorite(products);
+  registerAddToCartEvents(products);
 }
 displayProducts(products);
-
-registerNavigateToProductEvent(products);
-registerAddToFavoritesEvents(products);
-registerAddToCartEvents(products);
 
 // Search Bar function
 searchItem();

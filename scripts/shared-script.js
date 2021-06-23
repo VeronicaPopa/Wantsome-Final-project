@@ -1,20 +1,25 @@
 
-function registerAddToFavoritesEvents(products) {
+function registerAddProductsToFavorite(products) {
   for (let i = 0; i < products.length; i++) {
     const favlistButton = document.getElementsByClassName("favButton")[i];
     const favListIcon = document.getElementsByClassName("fav-icon")[i];
-    favlistButton.addEventListener("click", function (event) {
-      event.stopPropagation();
-      if (favListIcon.classList.contains("far")) {
-        favListIcon.classList.replace("far", "fas");
-        favListIcon.style.color = "rgb(255, 181, 198)";
-      } else {
-        favListIcon.classList.replace("fas", "far");
-        favListIcon.style.color = "rgb(214, 214, 214)";
-      }
-    });
+    registerAddProductToFavorits(favlistButton, favListIcon);
   };
 };
+
+function registerAddProductToFavorits(favlistButton, favListIcon) {
+  favlistButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    if (favListIcon.classList.contains("far")) {
+      favListIcon.classList.replace("far", "fas");
+      favListIcon.style.color = "rgb(255, 181, 198)";
+    } else {
+      favListIcon.classList.replace("fas", "far");
+      favListIcon.style.color = "rgb(214, 214, 214)";
+    }
+  });
+}
+
 
 function registerAddToCartEvents(products) {
   for (let i = 0; i < products.length; i++) {
@@ -56,6 +61,13 @@ const currencyRates = {
 let selectedRate = "EUR";
 const currencySelect = document.getElementById("currencySelect");
 
+function registerCurrencyChangeClick(displayFunc) {
+  currencySelect.addEventListener('change', (event) => {
+    selectedRate = event.target.value;
+    displayFunc();
+  });
+}
+
 function searchItem() {
   const searchBar = document.getElementById("search-bar");
 
@@ -77,8 +89,10 @@ instagram.addEventListener('click', function(event) {
   window.location.href = 'http://instagram.com';
 })
 
-const facebook = document.getElementsByClassName('facebook')[1];
-facebook.addEventListener('click', function(event) {
-  event.preventDefault();
-  window.location.href = 'http://facebook.com';
-})
+const facebookLinks = document.getElementsByClassName('facebook');
+for (let i = 0; i < facebookLinks.length; i++) {
+  facebookLinks[i].addEventListener('click', function(event) {
+    event.preventDefault();
+    window.location.href = 'http://facebook.com';
+  })  
+}
