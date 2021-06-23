@@ -119,9 +119,14 @@ signUpBtn.addEventListener("click", function (event) {
   event.preventDefault();
   const emailValue = document.getElementById("email").value;
   const passwordValue = document.getElementById("password").value;
+  const firstNameValue = document.getElementById("first-name").value;
+  const lastNameValue = document.getElementById("last-name").value;
+
   const newUser = {
     email: emailValue,
-    password: passwordValue
+    password: passwordValue,
+    firstName: firstNameValue,
+    lastName: lastNameValue
   };
   let listOfUsers = JSON.parse(localStorage.getItem('listOfUsers'));
 

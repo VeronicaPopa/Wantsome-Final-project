@@ -47,11 +47,38 @@ function registerNavigateToProductEvent(products) {
   }
 };
 
+// variables for currency converter
 const currencyRates = {
   EUR: { value: 1, symbol: "€" },
   USD: { value: 1.22, symbol: "$" },
   RON: { value: 4.93, symbol: "RON" }
 }
-
 let selectedRate = "EUR";
 const currencySelect = document.getElementById("currencySelect");
+
+function searchItem() {
+  const searchBar = document.getElementById("search-bar");
+
+  searchBar.addEventListener("keyup", (e) => {
+    const searchString = e.target.value.toLowerCase();
+    const filteredCharacters = products.filter((product) => {
+      return (
+        product.brand.toLowerCase().includes(searchString) ||
+        product.productName.toLowerCase().includes(searchString)) ||
+        product.details.toLowerCase().includes(searchString);
+    });
+    displayProducts(filteredCharacters);
+  });
+}
+
+const instagram = document.getElementsByClassName('instagram')[0];
+instagram.addEventListener('click', function(event) {
+  event.preventDefault();
+  window.location.href = 'http://instagram.com';
+})
+
+const facebook = document.getElementsByClassName('facebook')[1];
+facebook.addEventListener('click', function(event) {
+  event.preventDefault();
+  window.location.href = 'http://facebook.com';
+})

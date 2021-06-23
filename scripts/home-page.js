@@ -5,7 +5,7 @@ let products = [
     brand: "Missha",
     productName: "Signature Wrinkle Fill-Up BB Cream",
     details: "44 ml",
-    price: 27.68,
+    price: 27.68
   },
   {
     id: "2",
@@ -13,7 +13,7 @@ let products = [
     brand: "Dr.Ceuracle",
     productName: "PRO Balance Morning ENZYME Wash",
     details: "50 g",
-    price: 10.90,
+    price: 10.90
   },
   {
     id: "3",
@@ -21,7 +21,7 @@ let products = [
     brand: "BY WISHTREND",
     productName: "Acid-Duo Hibiscus 63 Cream",
     details: "50 ml",
-    price: "16.75",
+    price: 16.75
   },
   {
     id: "4",
@@ -29,7 +29,7 @@ let products = [
     brand: "By Wishtrend",
     productName: "Teca 1% Barrier Cream",
     details: "",
-    price: "20.69",
+    price: 20.69
   },
   {
     id: "5",
@@ -37,7 +37,7 @@ let products = [
     brand: "JMsolution",
     productName: "Glow Luminous Flower Firming Eye Mask",
     details: "",
-    price: "1.72",
+    price: 1.72
   },
   {
     id: "6",
@@ -45,7 +45,7 @@ let products = [
     brand: "Manyo Factory",
     productName: "Herb Green Cleansing Oil",
     details: "200 ml",
-    price: "24.59",
+    price: 24.59
   },
   {
     id: "7",
@@ -53,8 +53,7 @@ let products = [
     brand: "Manyo Factory",
     productName: "Cleansing Soda Foam",
     details: "150 ml",
-    price: "13.45",
-
+    price: 13.45
   },
   {
     id: "8",
@@ -62,7 +61,7 @@ let products = [
     brand: "Petitfée",
     productName: "Hydrogel Angel Wings Gold Neck Pack",
     details: "",
-    price: "1.13",
+    price: 1.13
   },
   {
     id: "9",
@@ -70,8 +69,7 @@ let products = [
     brand: "Pyunkang Yul",
     productName: "Moisture Ampoule",
     details: "100 ml",
-    price: "23.90",
-
+    price: 23.90
   },
   {
     id: "10",
@@ -79,7 +77,7 @@ let products = [
     brand: "So Natural",
     productName: "Real Matte Make Up Setting Fixx",
     details: "75 ml",
-    price: "13.40"
+    price: 13.40
   },
   {
     id: "11",
@@ -87,7 +85,7 @@ let products = [
     brand: "The Oozoo",
     productName: "Face In-Shot Mask Nutrient",
     details: "2.8 ml",
-    price: "5.47"
+    price: 5.47
   },
   {
     id: "12",
@@ -95,7 +93,7 @@ let products = [
     brand: "Village 11 Factory",
     productName: "Blue Chamomile Cream",
     details: "300 ml",
-    price: "11.58"
+    price: 11.58
   },
   {
     id: "13",
@@ -105,21 +103,46 @@ let products = [
     details: "SPF 28 PA ++ 45 ml",
     price: 25.48
   },
+  {
+    id: "14",
+    image: "../assets/images/bb-creams/dr._ceuracle_p_46.jpg",
+    brand: "Dr.Ceuracle",
+    productName: "Glow Fit Cushion",
+    details: "SPF50+ PA+++ 01 Pale Beige 13 g",
+    price: 20.82,
+  },
+  {
+    id: "15",
+    image: "../assets/images/bb-creams/dr._ceuracle_p_47.jpg",
+    brand: "Dr.Ceuracle",
+    productName: "Glow Fit Cushion",
+    details: "SPF50+ PA+++ 02 Natural Beige 13 g",
+    price: 20.82,
+  },
+  {
+    id: "16",
+    image: "../assets/images/bb-creams/dr._g_18.jpg",
+    brand: "Dr.G",
+    productName: "Radiance Dual Essence BB",
+    details: "SPF50+ PA+++ 40g",
+    price: 18.62,
+  }
 ];
 
-const searchBar = document.getElementById("search-bar");
+// function for slide
+(function showSlides() {
+  let counter = 1;
+  setInterval(function () {
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if (counter > 4) {
+      counter = 1;
+    }
+  }, 5000);
+})();
 
-// -------------function for slides-----------
-let counter = 1;
-setInterval(function () {
-  document.getElementById('radio' + counter).checked = true;
-  counter++;
-  if (counter > 4) {
-    counter = 1;
-  }
-}, 5000);
-
-currencySelect.addEventListener("change", (event) => {
+// currency converter
+currencySelect.addEventListener('change', (event) => {
   selectedRate = event.target.value;
   displayProducts(products);
 });
@@ -187,14 +210,4 @@ registerAddToFavoritesEvents(products);
 registerAddToCartEvents(products);
 
 // Search Bar function
-searchBar.addEventListener("keyup", (e) => {
-  const searchString = e.target.value.toLowerCase();
-  const filteredCharacters = products.filter((product) => {
-    return (
-      product.brand.toLowerCase().includes(searchString) ||
-      product.productName.toLowerCase().includes(searchString)) ||
-      product.details.toLowerCase().includes(searchString);
-    ;
-  })
-  displayProducts(filteredCharacters);
-})
+searchItem();

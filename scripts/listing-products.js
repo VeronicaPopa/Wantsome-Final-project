@@ -193,7 +193,8 @@ let products = [
   }
 ];
 
-currencySelect.addEventListener("change", (event) => {
+// currency converter
+currencySelect.addEventListener('change', (event) => {
   selectedRate = event.target.value;
   displayProducts(productResult);
 });
@@ -395,20 +396,6 @@ function onSortChange(event) {
   }
 }
 
-const searchBar = document.getElementById("search-bar");
-
-searchBar.addEventListener("keyup", (e) => {
-  const searchString = e.target.value.toLowerCase();
-  const filteredCharacters = products.filter((product) => {
-    return (
-      product.brand.toLowerCase().includes(searchString) ||
-      product.productName.toLowerCase().includes(searchString)) ||
-      product.details.toLowerCase().includes(searchString);
-
-  })
-  displayProducts(filteredCharacters);
-})
-
 const perPageSelect = document.getElementById("per-page");
 perPageSelect.addEventListener("change", (event) => {
   showItemsPerPage(event);
@@ -428,3 +415,5 @@ function showItemsPerPage(event) {
     }
   }
 }
+
+searchItem();
