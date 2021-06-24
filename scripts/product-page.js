@@ -3046,6 +3046,10 @@ let products = [
 let slidePosition = 1;
 let currentProduct = getCurrentProduct();
 
+// path to current product
+const ProductPage = document.getElementsByClassName("selected-product-name")[0];
+ProductPage.textContent = (currentProduct.brand + " " + currentProduct.productName);
+
 
 function displaySlide(position) {
   let i;
@@ -3223,7 +3227,7 @@ addToCartMainProduct();
 const buttons = document.querySelectorAll(".buttons-carousel");
 const itemContainer = document.querySelector(".ul-carousel");
 const itemCount = itemContainer.children.length;
-const itemWidth = 340; // item width + margin
+const itemWidth = 340; 
 const activeClass = "active-element";
 const maxVisibleItems = 3;
 
@@ -3260,3 +3264,4 @@ for (let button of buttons) {
       itemCount - activeElementIndex === maxVisibleItems;
   });
 }
+
