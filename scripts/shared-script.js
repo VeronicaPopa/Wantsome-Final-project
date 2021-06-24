@@ -9,6 +9,7 @@ function registerAddProductsToFavorite(products) {
 
 function registerAddProductToFavorits(favlistButton, favListIcon) {
   favlistButton.addEventListener("click", function (event) {
+    console.log('click add favorite');
     event.stopPropagation();
     if (favListIcon.classList.contains("far")) {
       favListIcon.classList.replace("far", "fas");
@@ -46,6 +47,7 @@ function registerNavigateToProductEvent(products) {
     const productElement = document.getElementsByClassName("product-container")[i];
     const productId = products[i].id;
     productElement.addEventListener("click", function (event) {
+      console.log('click navigate');
       event.preventDefault();
       window.location.href = '../pages/product-page.html?productId=' + productId;
     })

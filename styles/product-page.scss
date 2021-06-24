@@ -26,7 +26,7 @@ body {
   main {
     background-color: $primary-color;
 
-    .page-title-path {
+    .breadcrumb-content {
       padding: 10px 50px;
 
       ul {
@@ -439,6 +439,10 @@ body {
     }
     .products-catalog {
       display: none;
+
+      li {
+        list-style: none;
+      }
 
       @media screen and (max-width: 768px) {
         display: block;

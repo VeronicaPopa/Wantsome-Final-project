@@ -3038,15 +3038,31 @@ let products = [
     image: "../assets/images/bb-creams/lapalette_17.jpg",
     brand: "Lapalette",
     productName: "Silky Tension Cover Pact Original White Horse",
-    details: "SPF50+PA+++ №21, 12g* 2",
+    details: "SPF50+ №21",
     price: 17.59
+  },
+  {
+    id: "21",
+    image: "../assets/images/bb-creams/lapalette_161.jpg",
+    brand: "Lapalette",
+    productName: "Silky Tension Cover Pact Original White Horse",
+    details: "SPF50+ №23",
+    price: 17.59
+  },
+  {
+    id: "22",
+    image: "../assets/images/bb-creams/missha_9.jpg",
+    brand: "Missha",
+    productName: "Signature Real Complete BB Cream",
+    details: "SPF 25 45gr",
+    price: 23.52
   }
 ];
 
 let slidePosition = 1;
 let currentProduct = getCurrentProduct();
 
-// path to current product
+// Breadcrumb
 const ProductPage = document.getElementsByClassName("selected-product-name")[0];
 ProductPage.textContent = (currentProduct.brand + " " + currentProduct.productName);
 
@@ -3093,8 +3109,9 @@ function decreaseProductCartCount() {
 
 // currency converter
 registerCurrencyChangeClick(() => {
-  displayProducts(products);
+  // displayProducts(products);
   displayCurrentProduct();
+  displayCarouselProducts();
 });
 
 
@@ -3139,14 +3156,100 @@ function displayCurrentProduct() {
 
 displayCurrentProduct();
 
+function sendToFavorites() {
+  const favlistButton = document.getElementsByClassName("send-to-favorites")[0];
+  const favListIcon = document.getElementsByClassName("heart-icon")[0];
+  registerAddProductToFavorits(favlistButton, favListIcon);
+}
+sendToFavorites();
 
-function displayProducts(listOfProducts) {
+function addToCartMainProduct() {
+  const addToCartBtn = document.getElementsByClassName("add-to-bag")[0];
+  const cartIcon = document.getElementsByClassName("cart-icon")[0];
+  addToCartBtn.addEventListener("click", function () {
+    if (cartIcon.classList.contains("fa-cart-arrow-down")) {
+      cartIcon.classList.replace("fa-cart-arrow-down", "fa-cart-plus");
+    }
+    else {
+      cartIcon.classList.replace("fa-cart-plus", "fa-cart-arrow-down");
+    }
+  });
+};
+addToCartMainProduct();
+
+// carousel function
+const buttons = document.querySelectorAll(".buttons-carousel");
+const itemContainer = document.querySelector(".ul-carousel");
+// const itemCount = itemContainer.children.length;
+const itemCount = 6;
+
+console.log(itemContainer.children);
+console.log(itemContainer.children.length);
+
+const itemWidth = 340;
+const activeClass = "active-element";
+const maxVisibleItems = 3;
+
+function getElementIndex(element) {
+  return Array.from(element.parentNode.children).indexOf(element);
+}
+
+window.addEventListener("resize", function (e) {
+  console.log(window.innerWidth);
+});
+
+for (let button of buttons) {
+  button.addEventListener("click", function (e) {
+    const { direction } = e.target.dataset;
+    const nextActiveElementSibling =
+      direction === "next"
+        ? "nextElementSibling"
+        : "previousElementSibling";
+
+    const activeElement = document.getElementsByClassName(activeClass)[0];
+
+    const nextActiveElement = activeElement[nextActiveElementSibling];
+    nextActiveElement.classList.add(activeClass);
+    activeElement.classList.remove(activeClass);
+
+    const activeElementIndex = getElementIndex(nextActiveElement);
+
+    const translateValue = `-${itemWidth * activeElementIndex}px`;
+    itemContainer.style.transform = `translateX(${translateValue})`;
+
+    document.querySelector('button[data-direction="prev"').disabled =
+      activeElementIndex === 0;
+    document.querySelector('button[data-direction="next"').disabled =
+      itemCount - activeElementIndex === maxVisibleItems;
+  });
+}
+
+function displayProducts(products) {
   const productsCatalog = document.getElementsByClassName("products-catalog")[0];
   productsCatalog.innerHTML = " ";
-  for (let product of listOfProducts) {
+  createProductContainer(productsCatalog);
+}
+
+function displayCarouselProducts() {
+  const ulCarousel = document.getElementsByClassName("ul-carousel")[0];
+  ulCarousel.innerHTML = ' ';
+  createProductContainer(ulCarousel);
+}
+
+displayCarouselProducts();
+
+displayProducts(products);
+
+
+function createProductContainer(mainProductsContainer) {
+  for (let product of products) {
+    const li = document.createElement("li");
+    li.classList.add("active-element");
+    mainProductsContainer.appendChild(li);
+
     let productContainer = document.createElement("div");
     productContainer.classList.add("product-container");
-    productsCatalog.appendChild(productContainer);
+    li.appendChild(productContainer);
 
     const imgContainer = document.createElement("div");
     imgContainer.classList.add("img-container");
@@ -3194,74 +3297,7 @@ function displayProducts(listOfProducts) {
     favListIcon.classList.add("fa-heart");
     favListButton.appendChild(favListIcon);
   }
-  registerNavigateToProductEvent(listOfProducts);
-  registerAddProductsToFavorite(listOfProducts);
-  registerAddToCartEvents(listOfProducts);
+  registerNavigateToProductEvent(products);
+  registerAddProductsToFavorite(products);
+  registerAddToCartEvents(products);
 }
-
-displayProducts(products);
-
-
-function sendToFavorites() {
-  const favlistButton = document.getElementsByClassName("send-to-favorites")[0];
-  const favListIcon = document.getElementsByClassName("heart-icon")[0];
-  registerAddProductToFavorits(favlistButton, favListIcon);
-}
-sendToFavorites();
-
-function addToCartMainProduct() {
-  const addToCartBtn = document.getElementsByClassName("add-to-bag")[0];
-  const cartIcon = document.getElementsByClassName("cart-icon")[0];
-  addToCartBtn.addEventListener("click", function () {
-    if (cartIcon.classList.contains("fa-cart-arrow-down")) {
-      cartIcon.classList.replace("fa-cart-arrow-down", "fa-cart-plus");
-    }
-    else {
-      cartIcon.classList.replace("fa-cart-plus", "fa-cart-arrow-down");
-    }
-  });
-};
-addToCartMainProduct();
-
-// carousel function
-const buttons = document.querySelectorAll(".buttons-carousel");
-const itemContainer = document.querySelector(".ul-carousel");
-const itemCount = itemContainer.children.length;
-const itemWidth = 340; 
-const activeClass = "active-element";
-const maxVisibleItems = 3;
-
-function getElementIndex(element) {
-  return Array.from(element.parentNode.children).indexOf(element);
-}
-
-window.addEventListener("resize", function (e) {
-  console.log(window.innerWidth);
-});
-
-for (let button of buttons) {
-  button.addEventListener("click", function (e) {
-    const { direction } = e.target.dataset;
-    const nextActiveElementSibling =
-      direction === "next"
-        ? "nextElementSibling"
-        : "previousElementSibling";
-
-    const activeElement = document.getElementsByClassName(activeClass)[0];
-
-    const nextActiveElement = activeElement[nextActiveElementSibling];
-    nextActiveElement.classList.add(activeClass);
-    activeElement.classList.remove(activeClass);
-
-    const activeElementIndex = getElementIndex(nextActiveElement);
-
-    const translateValue = `-${itemWidth * activeElementIndex}px`;
-    itemContainer.style.transform = `translateX(${translateValue})`;
-
-    document.querySelector('button[data-direction="prev"').disabled =
-      activeElementIndex === 0;
-    document.querySelector('button[data-direction="next"').disabled =
-      itemCount - activeElementIndex === maxVisibleItems;
-  });
-}
-
