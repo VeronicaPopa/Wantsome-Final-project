@@ -43,12 +43,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .product-container .img-container img {
   position: relative;
   width: 100%;
   height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -209,5 +212,14 @@
 .product-container:hover .favButton {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
+}
+
+.product-container:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
 }
 /*# sourceMappingURL=product-container-styles.css.map */
