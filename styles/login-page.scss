@@ -108,9 +108,9 @@ body {
       width: 75%;
       height: 60%;
 
-      .border-color {
-        border: 2px solid $details-color;
-      }
+      // .border-color {
+      //   border: 2px solid $details-color;
+      // }
 
       label {
         margin-bottom: 5px;
@@ -173,7 +173,7 @@ body {
       }
 
       #error-message-password {
-        color: $authentication-details-color;
+        color: red;
         text-align: center;
         margin: 10px 0 10px 0;
 
@@ -200,7 +200,7 @@ body {
       .sign-in-btn {
         width: 60%;
         padding: 10px;
-        background-color: $details-color;
+        background-color: $authentication-details-color;
         border: 0;
         outline: none;
         text-transform: uppercase;

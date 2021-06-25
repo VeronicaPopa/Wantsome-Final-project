@@ -7,17 +7,19 @@ let isValidEmail;
 let isValidPass;
 let isValidAccount
 
-emailInput.addEventListener("click", function () {
-  emailInput.classList.add("border-color");
-})
 
-emailInput.addEventListener("blur", function () {
-  emailInput.classList.remove("border-color");
-})
 
-passwordContainer.addEventListener("click", function () {
-  passwordContainer.classList.add("border-color");
-})
+// emailInput.addEventListener("click", function () {
+//   emailInput.classList.add("border-color");
+// })
+
+// emailInput.addEventListener("blur", function () {
+//   emailInput.classList.remove("border-color");
+// })
+
+// passwordContainer.addEventListener("click", function () {
+//   passwordContainer.classList.add("border-color");
+// })
 
 // functie de validare a email-ului, cerinte: sa contina @ si .
 function emailValidator() {
@@ -39,12 +41,18 @@ function emailValidator() {
 function addEmailValidResult() {
   isValidEmail = emailValidator();
   updateSubmitStatus();
+
+
   const validationMessage = document.getElementById('validation-message');
 
   if (isValidEmail) {
     validationMessage.classList.remove("visibility-of-message");
+    emailInput.style.border = "2px solid #4cad63"
+
   } else {
     validationMessage.classList.add("visibility-of-message");
+    emailInput.style.border = "2px solid red"
+
 
   }
 }
@@ -91,8 +99,13 @@ function addPasswordValidResult() {
 
   if (!isValidPass) {
     errorVisibility.classList.remove("error-visibility-hidden");
+      passwordContainer.style.border = "2px solid red"
+
+
   } else {
     errorVisibility.classList.add("error-visibility-hidden");
+    passwordContainer.style.border = "2px solid #4cad63"
+
   }
 }
 passwordInput.addEventListener("keyup", addPasswordValidResult);
@@ -104,6 +117,8 @@ function accountValidation() {
 
   for (let i = 0; i < listOfUsers.length; i++) {
     if ((email === listOfUsers[i].email) && (passwordValue === listOfUsers[i].password)) {
+      // passwordContainer.style.border = "2px solid #ffb5c6";
+
       return true;
     }
   }

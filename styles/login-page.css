@@ -157,10 +157,6 @@ body #sign-in-container form {
   height: 60%;
 }
 
-body #sign-in-container form .border-color {
-  border: 2px solid #ffb5c6;
-}
-
 body #sign-in-container form label {
   margin-bottom: 5px;
   width: 60%;
@@ -187,12 +183,12 @@ body #sign-in-container form #validation-message {
 }
 
 body #sign-in-container form #validation-message .fas {
-  color: #f74e76;
+  color: #4cad63;
   margin-top: 5px;
 }
 
 body #sign-in-container form #validation-message p {
-  color: #f74e76;
+  color: #4cad63;
   margin: 5px;
 }
 
@@ -235,7 +231,7 @@ body #sign-in-container form .password-container i {
 }
 
 body #sign-in-container form #error-message-password {
-  color: #f74e76;
+  color: red;
   text-align: center;
   margin: 10px 0 10px 0;
 }
@@ -260,13 +256,13 @@ body #sign-in-container form #error-message-account {
 
 body #sign-in-container form .error-visibility-hidden {
   visibility: hidden;
-  color: #f74e76;
+  color: #4cad63;
 }
 
 body #sign-in-container form .sign-in-btn {
   width: 60%;
   padding: 10px;
-  background-color: #ffb5c6;
+  background-color: #4cad63;
   border: 0;
   outline: none;
   text-transform: uppercase;
@@ -279,7 +275,7 @@ body #sign-in-container form .sign-in-btn:hover {
 
 body #sign-in-container form .a-link {
   margin-top: 30px;
-  color: #f74e76;
+  color: #4cad63;
 }
 
 @media screen and (max-width: 768px) {

@@ -22,19 +22,6 @@ visibilityToggle.addEventListener("click", function () {
   password = !password;
 })
 
-
-emailInput.addEventListener("click", function () {
-  emailInput.classList.add("border-color");
-})
-
-emailInput.addEventListener("blur", function () {
-  emailInput.classList.remove("border-color");
-})
-
-passwordContainer.addEventListener("click", function () {
-  passwordContainer.classList.add("border-color");
-})
-
 // functie de validare a email-ului, cerinte: sa contina @ si .
 function emailValidator() {
   const email = emailInput.value;
@@ -59,8 +46,13 @@ function addEmailValidResult() {
 
   if (isValidEmail) {
     validationMessage.classList.remove("visibility-of-message");
+    emailInput.style.border = "2px solid #4cad63"
+
+
   } else {
     validationMessage.classList.add("visibility-of-message");
+    emailInput.style.border = "2px solid red"
+
 
   }
 }
@@ -91,8 +83,12 @@ function addPasswordValidResult() {
 
   if (!isValidPass) {
     errorVisibility.classList.remove("error-visibility-hidden");
+    passwordContainer.style.border = "2px solid red"
+
+
   } else {
     errorVisibility.classList.add("error-visibility-hidden");
+    passwordContainer.style.border = "2px solid #4cad63"
   }
 }
 passwordInput.addEventListener("keyup", addPasswordValidResult);

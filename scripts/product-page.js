@@ -3180,7 +3180,6 @@ addToCartMainProduct();
 // carousel function
 const buttons = document.querySelectorAll(".buttons-carousel");
 const itemContainer = document.querySelector(".ul-carousel");
-// const itemCount = itemContainer.children.length;
 const itemCount = 6;
 
 console.log(itemContainer.children);
