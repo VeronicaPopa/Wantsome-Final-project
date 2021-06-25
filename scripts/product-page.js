@@ -3063,7 +3063,6 @@ let slidePosition = 1;
 let currentProduct = getCurrentProduct();
 
 // Breadcrumb
-
 document.title = currentProduct.brand + " " + currentProduct.productName;
 const ProductPage = document.getElementsByClassName("selected-product-name")[0];
 ProductPage.textContent = (currentProduct.brand + " " + currentProduct.productName);
@@ -3111,7 +3110,6 @@ function decreaseProductCartCount() {
 
 // currency converter
 registerCurrencyChangeClick(() => {
-  // displayProducts(products);
   displayCurrentProduct();
   displayCarouselProducts();
 });
@@ -3176,17 +3174,13 @@ function addToCartMainProduct() {
       cartIcon.classList.replace("fa-cart-plus", "fa-cart-arrow-down");
     }
   });
-};
+}
 addToCartMainProduct();
 
 // carousel function
 const buttons = document.querySelectorAll(".buttons-carousel");
 const itemContainer = document.querySelector(".ul-carousel");
 const itemCount = 6;
-
-console.log(itemContainer.children);
-console.log(itemContainer.children.length);
-
 const itemWidth = 340;
 const activeClass = "active-element";
 const maxVisibleItems = 3;

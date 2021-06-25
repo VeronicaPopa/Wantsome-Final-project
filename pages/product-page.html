@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/product-page.css">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/all.css">
@@ -198,20 +197,18 @@
     <main>
       <section class="breadcrumb-content">
         <ul>
-          <li> 
+          <li>
             <a href="../pages/home-page.html">Home</a>
           </li>
-          <li> 
+          <li>
             <a href="../pages/listing-products-page.html">BB cream</a>
           </li>
-          <li> 
+          <li>
             <a class="selected-product-name""></a>
           </li>
-
-
         </ul>
       </section>
-      <div class="main-product-details">
+      <div class=" main-product-details">
         <div class="top-product-details">
           <div class="slider-container">
             <span id="slider-images">
@@ -219,7 +216,7 @@
             <button class="control-next" onclick="displayNextSlides(-1)">&#10095;</button>
             <button class="control-prev" onclick="displayNextSlides(1)">&#10094;</button>
           </div>
-
+      
           <div class="details-to-buy-container">
             <span class="send-to-favorites">
               <i class="far fa-heart heart-icon"></i>
@@ -241,7 +238,8 @@
             <p class="delivery-details">
               Delivery within 1-2 days.<br>
               Free delivery with an order amount of 20 € and higher. <br>
-              If the order is made on the weekend or after 5:00 pm, the order is processed on the next business day
+              If the order is made on the weekend or after 5:00 pm, the order is processed on the next business
+              day
               after
               it is placed.<br>
               Delivery timing: Monday-Friday 9:30 am till 6:00 pm.
@@ -291,120 +289,6 @@
       <section class="carousel">
         <button class="buttons-carousel" data-direction="prev" disabled>&#10094</button>
         <ul class="ul-carousel">
-          <!-- <li class="active-element">
-            <div class="product-container">
-              <div class="img-container">
-                <img src="../assets/images/aromatica_3.jpg" alt="aromatica_lavender_relazing">
-                <span class="favButton">
-                  <i class="fav-icon far fa-heart"></i>
-                </span>
-              </div>
-              <div class="main-info-container">
-                <p class="name"> Aromatica Lavender Relaxing Massage&Body Oil 100 ml</p>
-                <div class="price-container">
-                  <p class="price">10.00 €</p>
-                  <div class="wish-list-btn">
-                    <i class="cart fas fa-shopping-cart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="active-element">
-            <div class="product-container">
-              <div class="img-container">
-                <img src="../assets/images/bb-creams/purito_1.jpg" alt="Purito Cica Clearing">
-                <span class="favButton">
-                  <i class="fav-icon far fa-heart"></i>
-                </span>
-              </div>
-              <div class="main-info-container">
-                <p class="name"> Purito Cica Clearing BB cream №23 30ml</p>
-                <div class="price-container">
-                  <p class="price">12.98 €</p>
-                  <div class="wish-list-btn">
-                    <i class="cart fas fa-shopping-cart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="active-element">
-            <div class="product-container">
-              <div class="img-container">
-                <img src="../assets/images/bb-creams/mizon_48.jpg" alt="Mizon Snail Repair Intensive">
-                <span class="favButton">
-                  <i class="fav-icon far fa-heart"></i>
-                </span>
-              </div>
-              <div class="main-info-container">
-                <p class="name"> Mizon Snail Repair Intensive BB Cream SPF50+ №23, 20ml</p>
-                <div class="price-container">
-                  <p class="price">5.39 €</p>
-                  <div class="wish-list-btn">
-                    <i class="cart fas fa-shopping-cart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="active-element">
-            <div class="product-container">
-              <div class="img-container">
-                <img src="../assets/images/bb-creams/mizon_28.jpg" alt="Mizon Watermax Moisture">
-                <span class="favButton">
-                  <i class="fav-icon far fa-heart"></i>
-                </span>
-              </div>
-              <div class="main-info-container">
-                <p class="name"> Mizon Watermax Moisture BB Cream SPF 30 50 ml</p>
-                <div class="price-container">
-                  <p class="price">11.50 €</p>
-                  <div class="wish-list-btn">
-                    <i class="cart fas fa-shopping-cart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="active-element">
-            <div class="product-container">
-              <div class="img-container">
-                <img src="../assets/images/bb-creams/missha_382jpg.jpeg" alt="Missha Cho Bo Yang BB Cream">
-                <span class="favButton">
-                  <i class="fav-icon far fa-heart"></i>
-                </span>
-              </div>
-              <div class="main-info-container">
-                <p class="name"> Missha Cho Bo Yang BB Cream Spf30 № 25 50 ml</p>
-                <div class="price-container">
-                  <p class="price">27.90 €</p>
-                  <div class="wish-list-btn">
-                    <i class="cart fas fa-shopping-cart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="active-element">
-            <div class="product-container">
-              <div class="img-container">
-                <img src="../assets/images/bb-creams/mizon_5.jpg" alt="Mizon Snail Repair Intensive">
-                <span class="favButton">
-                  <i class="fav-icon far fa-heart"></i>
-                </span>
-              </div>
-              <div class="main-info-container">
-                <p class="name"> Mizon Snail Repair Intensive BB Cream SPF50+ №31 50ml</p>
-                <div class="price-container">
-                  <p class="price">9.50 €</p>
-                  <div class="wish-list-btn">
-                    <i class="cart fas fa-shopping-cart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li> -->
         </ul>
         <button class="buttons-carousel" data-direction="next">&#10095</button>
       </section>

@@ -5,11 +5,10 @@ function registerAddProductsToFavorite(products) {
     const favListIcon = document.getElementsByClassName("fav-icon")[i];
     registerAddProductToFavorits(favlistButton, favListIcon);
   };
-};
+}
 
 function registerAddProductToFavorits(favlistButton, favListIcon) {
   favlistButton.addEventListener("click", function (event) {
-    console.log('click add favorite');
     event.stopPropagation();
     if (favListIcon.classList.contains("far")) {
       favListIcon.classList.replace("far", "fas");
@@ -20,7 +19,6 @@ function registerAddProductToFavorits(favlistButton, favListIcon) {
     }
   });
 }
-
 
 function registerAddToCartEvents(products) {
   for (let i = 0; i < products.length; i++) {
@@ -40,7 +38,7 @@ function registerAddToCartEvents(products) {
       }
     });
   };
-};
+}
 
 function registerNavigateToProductEvent(products) {
   for (let i = 0; i < products.length; i++) {
@@ -52,7 +50,7 @@ function registerNavigateToProductEvent(products) {
       window.location.href = '../pages/product-page.html?productId=' + productId;
     })
   }
-};
+}
 
 // variables for currency converter
 const currencyRates = {
@@ -70,7 +68,7 @@ function registerCurrencyChangeClick(displayFunc) {
   });
 }
 
-function searchItem() {
+function searchProduct() {
   const searchBar = document.getElementById("search-bar");
 
   searchBar.addEventListener("keyup", (e) => {

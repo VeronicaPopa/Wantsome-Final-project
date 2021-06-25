@@ -52,7 +52,7 @@ let products = [
     image: "../assets/images/bb-creams/holika_holika_5jpg.jpeg",
     brand: "Holika Holika",
     productName: "Bouncing Petit BB Cream",
-    details: "30 ml",
+    details: "130 ml",
     price: 6.12
   },
   {
@@ -187,8 +187,8 @@ let products = [
     id: "35",
     image: "../assets/images/bb-creams/purito_1.jpg",
     brand: "Purito",
-    productName: "Cica Clearing BB cream",
-    details: "№23 30ml",
+    productName: "Cica Clearing BB cream Natural",
+    details: "№ 23 30ml",
     price: 12.98
   }
 ];
@@ -412,4 +412,4 @@ function showItemsPerPage(event) {
   }
 }
 
-searchItem();
+searchProduct();

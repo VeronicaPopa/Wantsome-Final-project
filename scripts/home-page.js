@@ -18,7 +18,7 @@ let products = [
   {
     id: "3",
     image: "../assets/images/by_wishtrend_1.jpg",
-    brand: "BY WISHTREND",
+    brand: "By Wishtrend",
     productName: "Acid-Duo Hibiscus 63 Cream",
     details: "50 ml",
     price: 16.75
@@ -27,8 +27,8 @@ let products = [
     id: "4",
     image: "../assets/images/by_wishtrend_2.jpg",
     brand: "By Wishtrend",
-    productName: "Teca 1% Barrier Cream",
-    details: "",
+    productName: "Teca 1% Barrier Cream Duo Action",
+    details: "50 ml",
     price: 20.69
   },
   {
@@ -51,7 +51,7 @@ let products = [
     id: "7",
     image: "../assets/images/manyo_factory_29.jpg",
     brand: "Manyo Factory",
-    productName: "Cleansing Soda Foam",
+    productName: "Cleansing Soda Foam Deep Pore",
     details: "150 ml",
     price: 13.45
   },
@@ -67,7 +67,7 @@ let products = [
     id: "9",
     image: "../assets/images/pyunkang_yul.jpg",
     brand: "Pyunkang Yul",
-    productName: "Moisture Ampoule",
+    productName: "Moisture Ampoule High-potency",
     details: "100 ml",
     price: 23.90
   },
@@ -199,11 +199,11 @@ function displayProducts(listOfProducts) {
     favListIcon.classList.add("fa-heart");
     favListButton.appendChild(favListIcon);
   }
-  registerNavigateToProductEvent(products);
-  registerAddProductsToFavorite(products);
-  registerAddToCartEvents(products);
+  registerNavigateToProductEvent(listOfProducts);
+  registerAddProductsToFavorite(listOfProducts);
+  registerAddToCartEvents(listOfProducts);
 }
 displayProducts(products);
 
-// Search Bar function
-searchItem();
+// Search Bar function 
+searchProduct();
