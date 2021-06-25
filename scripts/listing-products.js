@@ -211,7 +211,7 @@ function displayProducts(listOfProducts) {
     productContainer.appendChild(imgContainer);
     const productImage = document.createElement("img");
     productImage.src = product.image;
-    productImage.setAttribute("alt", product.description);
+    productImage.setAttribute("alt", product.productName);
     imgContainer.appendChild(productImage);
 
     const mainInfoContainer = document.createElement("div");

@@ -3063,6 +3063,8 @@ let slidePosition = 1;
 let currentProduct = getCurrentProduct();
 
 // Breadcrumb
+
+document.title = currentProduct.brand + " " + currentProduct.productName;
 const ProductPage = document.getElementsByClassName("selected-product-name")[0];
 ProductPage.textContent = (currentProduct.brand + " " + currentProduct.productName);
 
@@ -3255,7 +3257,7 @@ function createProductContainer(mainProductsContainer) {
     productContainer.appendChild(imgContainer);
     const productImage = document.createElement("img");
     productImage.src = product.image;
-    productImage.setAttribute("alt", product.description);
+    productImage.setAttribute("alt", product.productName);
     imgContainer.appendChild(productImage);
 
     const mainInfoContainer = document.createElement("div");
@@ -3300,3 +3302,15 @@ function createProductContainer(mainProductsContainer) {
   registerAddProductsToFavorite(products);
   registerAddToCartEvents(products);
 }
+
+const twitter = document.getElementsByClassName('twitter')[0];
+twitter.addEventListener('click', function(event) {
+  event.preventDefault();
+  window.location.href = 'http://twitter.com';
+})
+
+const telegram = document.getElementsByClassName('telegram')[0];
+telegram.addEventListener('click', function(event) {
+  event.preventDefault();
+  window.location.href = 'http://telegram.org';
+})
