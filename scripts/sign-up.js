@@ -93,15 +93,63 @@ function addPasswordValidResult() {
 }
 passwordInput.addEventListener("keyup", addPasswordValidResult);
 
-(function enableCountryInput() {
-  const cityInput = document.getElementById("city");
-  const countryInput = document.getElementById("country");
-  cityInput.addEventListener("blur", function(){
-    if (cityInput.value.length > 0) {
-      countryInput.removeAttribute("disabled");
-    }
-  })
+// Functions for select City and Country
+const selectCity = document.getElementById("city");
+const cities = [' ', 'Bucuresti', 'Iasi', 'Chisinau', 'Balti', 'Vienna', 'Zagreb', 'Paris', 'Berlin', 'London', 'Rome'];
+
+(function createSelectCityOptions() {
+  for (let city of cities) {
+    const cityOption = document.createElement('option');
+    cityOption.setAttribute('value', city);
+    selectCity.appendChild(cityOption);
+    cityOption.text = city;
+  }  
 })();
+
+function onSelectChange() {
+  const selectedCity = selectCity.value
+  const countryInput = document.getElementById('country');
+
+  switch (selectedCity) {
+    case 'Bucuresti':
+    case 'Iasi':
+      countryInput.value = 'Romania';
+      break;
+
+    case 'Chisinau':
+    case 'Balti':
+      countryInput.value = 'R.Moldova';
+      break;
+
+    case 'Vienna':
+      countryInput.value = 'Austria';
+      break;
+
+    case 'Zagreb':
+      countryInput.value = 'Croatia';
+      break;
+
+    case 'Paris':
+      countryInput.value = 'France';
+      break;
+
+    case 'Berlin':
+      countryInput.value = 'Germany';
+      break;
+
+    case 'London':
+      countryInput.value = 'UK';
+      break;
+
+    case 'Rome':
+      countryInput.value = 'Italy';
+      break;
+  }
+};
+
+selectCity.addEventListener("change", function (event) {
+  onSelectChange();
+});
 
 function updateSubmitStatus() {
   if ((isValidEmail) && (isValidPass)) {
@@ -135,4 +183,5 @@ signUpBtn.addEventListener("click", function (event) {
 
   window.location.href = '../pages/login-page.html';
 })
+
 
